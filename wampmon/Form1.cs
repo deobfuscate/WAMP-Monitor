@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -155,6 +153,16 @@ namespace wampmon
                 label5.Text = "Offline";
                 button2.Text = "Start";
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
