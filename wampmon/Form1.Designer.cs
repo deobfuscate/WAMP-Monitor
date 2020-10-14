@@ -1,6 +1,6 @@
 ﻿namespace wampmon
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,224 +29,222 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlTitlebar = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlApache = new System.Windows.Forms.Panel();
+            this.lblApacheStatus = new System.Windows.Forms.Label();
+            this.btnApache = new System.Windows.Forms.Button();
+            this.lblApacheTitle = new System.Windows.Forms.Label();
+            this.pnlMySQL = new System.Windows.Forms.Panel();
+            this.lblMySQLStatus = new System.Windows.Forms.Label();
+            this.btnMySQL = new System.Windows.Forms.Button();
+            this.lblMySQLTitle = new System.Windows.Forms.Label();
+            this.tmrMain = new System.Windows.Forms.Timer(this.components);
+            this.pnlTitlebar.SuspendLayout();
+            this.pnlApache.SuspendLayout();
+            this.pnlMySQL.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTitlebar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 31);
-            this.panel1.TabIndex = 1;
-            this.panel1.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
+            this.pnlTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.pnlTitlebar.Controls.Add(this.btnMinimize);
+            this.pnlTitlebar.Controls.Add(this.btnClose);
+            this.pnlTitlebar.Controls.Add(this.lblTitle);
+            this.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitlebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitlebar.Name = "pnlTitlebar";
+            this.pnlTitlebar.Size = new System.Drawing.Size(562, 31);
+            this.pnlTitlebar.TabIndex = 1;
+            this.pnlTitlebar.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
+            this.pnlTitlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
             // 
-            // label3
+            // btnMinimize
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(8, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "WAMP Monitor";
-            this.label3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleLabelMouseMove);
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(472, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(45, 31);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.Text = "＿";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // panel2
+            // btnClose
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(12, 43);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(259, 134);
-            this.panel2.TabIndex = 2;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(517, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(45, 31);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "✕";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label4
+            // lblTitle
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(8, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Offline";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(8, 6);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(115, 20);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "WAMP Monitor";
+            this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleLabelMouseMove);
             // 
-            // button1
+            // pnlApache
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(153, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlApache.Controls.Add(this.lblApacheStatus);
+            this.pnlApache.Controls.Add(this.btnApache);
+            this.pnlApache.Controls.Add(this.lblApacheTitle);
+            this.pnlApache.Location = new System.Drawing.Point(12, 43);
+            this.pnlApache.Name = "pnlApache";
+            this.pnlApache.Size = new System.Drawing.Size(259, 134);
+            this.pnlApache.TabIndex = 2;
             // 
-            // label1
+            // lblApacheStatus
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Apache";
+            this.lblApacheStatus.AutoSize = true;
+            this.lblApacheStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblApacheStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblApacheStatus.Location = new System.Drawing.Point(8, 40);
+            this.lblApacheStatus.Name = "lblApacheStatus";
+            this.lblApacheStatus.Size = new System.Drawing.Size(74, 25);
+            this.lblApacheStatus.TabIndex = 2;
+            this.lblApacheStatus.Text = "Offline";
             // 
-            // panel3
+            // btnApache
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(289, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(259, 134);
-            this.panel3.TabIndex = 2;
+            this.btnApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnApache.FlatAppearance.BorderSize = 0;
+            this.btnApache.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnApache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApache.ForeColor = System.Drawing.Color.White;
+            this.btnApache.Location = new System.Drawing.Point(153, 80);
+            this.btnApache.Name = "btnApache";
+            this.btnApache.Size = new System.Drawing.Size(94, 41);
+            this.btnApache.TabIndex = 1;
+            this.btnApache.Text = "Start";
+            this.btnApache.UseVisualStyleBackColor = false;
+            this.btnApache.Click += new System.EventHandler(this.btnApache_Click);
             // 
-            // label5
+            // lblApacheTitle
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(8, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Offline";
+            this.lblApacheTitle.AutoSize = true;
+            this.lblApacheTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApacheTitle.ForeColor = System.Drawing.Color.White;
+            this.lblApacheTitle.Location = new System.Drawing.Point(8, 5);
+            this.lblApacheTitle.Name = "lblApacheTitle";
+            this.lblApacheTitle.Size = new System.Drawing.Size(85, 25);
+            this.lblApacheTitle.TabIndex = 0;
+            this.lblApacheTitle.Text = "Apache";
             // 
-            // button2
+            // pnlMySQL
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(152, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 41);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pnlMySQL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlMySQL.Controls.Add(this.lblMySQLStatus);
+            this.pnlMySQL.Controls.Add(this.btnMySQL);
+            this.pnlMySQL.Controls.Add(this.lblMySQLTitle);
+            this.pnlMySQL.Location = new System.Drawing.Point(289, 43);
+            this.pnlMySQL.Name = "pnlMySQL";
+            this.pnlMySQL.Size = new System.Drawing.Size(259, 134);
+            this.pnlMySQL.TabIndex = 2;
             // 
-            // label2
+            // lblMySQLStatus
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(8, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "MySQL";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblMySQLStatus.AutoSize = true;
+            this.lblMySQLStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.lblMySQLStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblMySQLStatus.Location = new System.Drawing.Point(8, 40);
+            this.lblMySQLStatus.Name = "lblMySQLStatus";
+            this.lblMySQLStatus.Size = new System.Drawing.Size(74, 25);
+            this.lblMySQLStatus.TabIndex = 3;
+            this.lblMySQLStatus.Text = "Offline";
             // 
-            // timer1
+            // btnMySQL
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnMySQL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnMySQL.FlatAppearance.BorderSize = 0;
+            this.btnMySQL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnMySQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMySQL.ForeColor = System.Drawing.Color.White;
+            this.btnMySQL.Location = new System.Drawing.Point(152, 80);
+            this.btnMySQL.Name = "btnMySQL";
+            this.btnMySQL.Size = new System.Drawing.Size(94, 41);
+            this.btnMySQL.TabIndex = 2;
+            this.btnMySQL.Text = "Start";
+            this.btnMySQL.UseVisualStyleBackColor = false;
+            this.btnMySQL.Click += new System.EventHandler(this.btnMySQL_Click);
             // 
-            // button3
+            // lblMySQLTitle
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(517, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 31);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "✕";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lblMySQLTitle.AutoSize = true;
+            this.lblMySQLTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMySQLTitle.ForeColor = System.Drawing.Color.White;
+            this.lblMySQLTitle.Location = new System.Drawing.Point(8, 5);
+            this.lblMySQLTitle.Name = "lblMySQLTitle";
+            this.lblMySQLTitle.Size = new System.Drawing.Size(83, 25);
+            this.lblMySQLTitle.TabIndex = 0;
+            this.lblMySQLTitle.Text = "MySQL";
             // 
-            // button4
+            // tmrMain
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(472, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 31);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "_";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.tmrMain.Enabled = true;
+            this.tmrMain.Interval = 10000;
+            this.tmrMain.Tick += new System.EventHandler(this.tmrMain_Tick);
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 189);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMySQL);
+            this.Controls.Add(this.pnlApache);
+            this.Controls.Add(this.pnlTitlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(200, 150);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Name = "frmMain";
+            this.Text = "WAMP Monitor";
+            this.pnlTitlebar.ResumeLayout(false);
+            this.pnlTitlebar.PerformLayout();
+            this.pnlApache.ResumeLayout(false);
+            this.pnlApache.PerformLayout();
+            this.pnlMySQL.ResumeLayout(false);
+            this.pnlMySQL.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel pnlTitlebar;
+        private System.Windows.Forms.Panel pnlApache;
+        private System.Windows.Forms.Label lblApacheTitle;
+        private System.Windows.Forms.Panel pnlMySQL;
+        private System.Windows.Forms.Label lblMySQLTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnApache;
+        private System.Windows.Forms.Label lblApacheStatus;
+        private System.Windows.Forms.Button btnMySQL;
+        private System.Windows.Forms.Label lblMySQLStatus;
+        private System.Windows.Forms.Timer tmrMain;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace wampmon
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
@@ -19,12 +19,82 @@ namespace wampmon
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
 
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
             CheckServices();
+        }
+
+        private void StartService(bool svc)
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.CreateNoWindow = true;
+            if (svc == APACHE)
+            { // apache
+                proc.StartInfo.WorkingDirectory = "apache\\bin";
+                proc.StartInfo.FileName = "apache\\bin\\httpd.exe";
+            }
+            else // mysql
+                proc.StartInfo.FileName = "mysql\\bin\\mysqld.exe";
+            proc.Start();
+        }
+
+        private void KillService(string target)
+        {
+            foreach (var process in Process.GetProcessesByName(target))
+                process.Kill();
+        }
+
+        private void btnApache_Click(object sender, EventArgs e)
+        {
+            if (IsRunning("httpd"))
+                KillService("httpd");
+            else
+                StartService(APACHE);
+        }
+
+        private void btnMySQL_Click(object sender, EventArgs e)
+        {
+            if (IsRunning("mysqld"))
+                KillService("mysqld");
+            else
+                StartService(MYSQL);
+        }
+
+        private bool IsRunning(string target)
+        {
+            return Process.GetProcessesByName(target).Length != 0;
+        }
+
+        private void tmrMain_Tick(object sender, EventArgs e)
+        {
+            CheckServices();
+        }
+
+        private void CheckService(string svc, Label svcLabel, Button svcButton)
+        {
+            if (IsRunning(svc))
+            {
+                svcLabel.ForeColor = Color.Green;
+                svcLabel.Text = "Online";
+                svcButton.Text = "Stop";
+            }
+            else
+            {
+                svcLabel.ForeColor = Color.Red;
+                svcLabel.Text = "Offline";
+                svcButton.Text = "Start";
+            }
+        }
+
+        private void CheckServices()
+        {
+            CheckService("httpd", lblApacheStatus, btnApache);
+            CheckService("mysqld", lblMySQLStatus, btnMySQL);
         }
 
         private void TitleDoubleClick(object sender, EventArgs e)
@@ -64,103 +134,17 @@ namespace wampmon
             base.WndProc(ref m);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TitleLabelMouseMove(object sender, MouseEventArgs e)
         {
             TitleMouseMove(sender, e);
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StartService(bool svc)
-        {
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.CreateNoWindow = true;
-            if (svc == APACHE)
-            { // apache
-                proc.StartInfo.WorkingDirectory = "apache\\bin";
-                proc.StartInfo.FileName = "apache\\bin\\httpd.exe";
-            }
-            else // mysql
-                proc.StartInfo.FileName = "mysql\\bin\\mysqld.exe";
-            proc.Start();
-        }
-        private void KillService(string target)
-        {
-            foreach (var process in Process.GetProcessesByName(target))
-                process.Kill();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (IsRunning("httpd"))
-                KillService("httpd");
-            else
-                StartService(APACHE);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (IsRunning("mysqld"))
-                KillService("mysqld");
-            else
-                StartService(MYSQL);
-        }
-
-        private bool IsRunning(string target)
-        {
-            return (Process.GetProcessesByName(target).Length == 0) ? false : true;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            CheckServices();
-        }
-
-        private void CheckServices()
-        {
-            if (IsRunning("httpd"))
-            {
-                label4.ForeColor = Color.Green;
-                label4.Text = "Online";
-                button1.Text = "Stop";
-            }
-            else
-            {
-                label4.ForeColor = Color.Red;
-                label4.Text = "Offline";
-                button1.Text = "Start";
-            }
-
-            if (IsRunning("mysqld"))
-            {
-                label5.ForeColor = Color.Green;
-                label5.Text = "Online";
-                button2.Text = "Stop";
-            }
-            else
-            {
-                label5.ForeColor = Color.Red;
-                label5.Text = "Offline";
-                button2.Text = "Start";
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
