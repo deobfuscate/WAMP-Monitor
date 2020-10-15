@@ -25,6 +25,14 @@ namespace wampmon
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
             CheckServices();
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath))
+            {
+                pnlApacheConfig.Hide();
+            }
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.mysqlPath))
+            {
+                pnlMySQLConfig.Hide();
+            }
         }
 
         private void StartService(bool svc)
@@ -35,11 +43,11 @@ namespace wampmon
             proc.StartInfo.CreateNoWindow = true;
             if (svc == APACHE)
             { // apache
-                proc.StartInfo.WorkingDirectory = "apache\\bin";
-                proc.StartInfo.FileName = "apache\\bin\\httpd.exe";
+                proc.StartInfo.WorkingDirectory = Properties.Settings.Default.apachePath;
+                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\httpd.exe";
             }
             else // mysql
-                proc.StartInfo.FileName = "mysql\\bin\\mysqld.exe";
+                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\mysqld.exe";
             proc.Start();
         }
 
@@ -147,6 +155,38 @@ namespace wampmon
         private void btnClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void ApacheConfigClick(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.apachePath = folderBrowser.SelectedPath;
+                Properties.Settings.Default.Save();
+                pnlApacheConfig.Hide();
+            }
+        }
+
+        private void ApacheLabelConfigClick(object sender, EventArgs e)
+        {
+            ApacheConfigClick(sender, e);
+        }
+
+        private void MySQLConfigClick(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.mysqlPath = folderBrowser.SelectedPath;
+                Properties.Settings.Default.Save();
+                pnlMySQLConfig.Hide();
+            }
+        }
+
+        private void MySQLLabelConfigClick(object sender, EventArgs e)
+        {
+            MySQLConfigClick(sender, e);
         }
     }
 }

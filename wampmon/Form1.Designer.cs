@@ -42,9 +42,15 @@
             this.btnMySQL = new System.Windows.Forms.Button();
             this.lblMySQLTitle = new System.Windows.Forms.Label();
             this.tmrMain = new System.Windows.Forms.Timer(this.components);
+            this.pnlApacheConfig = new System.Windows.Forms.Panel();
+            this.lblApacheConfig = new System.Windows.Forms.Label();
+            this.pnlMySQLConfig = new System.Windows.Forms.Panel();
+            this.lblMySQLConfig = new System.Windows.Forms.Label();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
+            this.pnlApacheConfig.SuspendLayout();
+            this.pnlMySQLConfig.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitlebar
@@ -207,12 +213,58 @@
             this.tmrMain.Interval = 10000;
             this.tmrMain.Tick += new System.EventHandler(this.tmrMain_Tick);
             // 
+            // pnlApacheConfig
+            // 
+            this.pnlApacheConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlApacheConfig.Controls.Add(this.lblApacheConfig);
+            this.pnlApacheConfig.Location = new System.Drawing.Point(12, 76);
+            this.pnlApacheConfig.Name = "pnlApacheConfig";
+            this.pnlApacheConfig.Size = new System.Drawing.Size(259, 101);
+            this.pnlApacheConfig.TabIndex = 3;
+            this.pnlApacheConfig.Click += new System.EventHandler(this.ApacheConfigClick);
+            // 
+            // lblApacheConfig
+            // 
+            this.lblApacheConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApacheConfig.ForeColor = System.Drawing.Color.White;
+            this.lblApacheConfig.Location = new System.Drawing.Point(13, 30);
+            this.lblApacheConfig.Name = "lblApacheConfig";
+            this.lblApacheConfig.Size = new System.Drawing.Size(234, 42);
+            this.lblApacheConfig.TabIndex = 0;
+            this.lblApacheConfig.Text = "Apache directory is not found. Click here to configure.";
+            this.lblApacheConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblApacheConfig.Click += new System.EventHandler(this.ApacheLabelConfigClick);
+            // 
+            // pnlMySQLConfig
+            // 
+            this.pnlMySQLConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlMySQLConfig.Controls.Add(this.lblMySQLConfig);
+            this.pnlMySQLConfig.Location = new System.Drawing.Point(289, 76);
+            this.pnlMySQLConfig.Name = "pnlMySQLConfig";
+            this.pnlMySQLConfig.Size = new System.Drawing.Size(259, 101);
+            this.pnlMySQLConfig.TabIndex = 4;
+            this.pnlMySQLConfig.Click += new System.EventHandler(this.MySQLConfigClick);
+            // 
+            // lblMySQLConfig
+            // 
+            this.lblMySQLConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMySQLConfig.ForeColor = System.Drawing.Color.White;
+            this.lblMySQLConfig.Location = new System.Drawing.Point(13, 30);
+            this.lblMySQLConfig.Name = "lblMySQLConfig";
+            this.lblMySQLConfig.Size = new System.Drawing.Size(234, 42);
+            this.lblMySQLConfig.TabIndex = 0;
+            this.lblMySQLConfig.Text = "MySQL directory is not found. Click here to configure.";
+            this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 189);
+            this.Controls.Add(this.pnlMySQLConfig);
+            this.Controls.Add(this.pnlApacheConfig);
             this.Controls.Add(this.pnlMySQL);
             this.Controls.Add(this.pnlApache);
             this.Controls.Add(this.pnlTitlebar);
@@ -226,6 +278,8 @@
             this.pnlApache.PerformLayout();
             this.pnlMySQL.ResumeLayout(false);
             this.pnlMySQL.PerformLayout();
+            this.pnlApacheConfig.ResumeLayout(false);
+            this.pnlMySQLConfig.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,6 +299,10 @@
         private System.Windows.Forms.Timer tmrMain;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel pnlApacheConfig;
+        private System.Windows.Forms.Label lblApacheConfig;
+        private System.Windows.Forms.Panel pnlMySQLConfig;
+        private System.Windows.Forms.Label lblMySQLConfig;
     }
 }
 
