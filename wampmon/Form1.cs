@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -25,6 +26,8 @@ namespace wampmon
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
             CheckServices();
+            pnlApacheConfig.BringToFront();
+            pnlMySQLConfig.BringToFront();
             if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath))
             {
                 pnlApacheConfig.Hide();
@@ -37,6 +40,8 @@ namespace wampmon
 
         private void StartService(bool svc)
         {
+            if (!File.Exists($"{Properties.Settings.Default.apachePath}httpd.exe")) return;
+            if (!File.Exists($"{Properties.Settings.Default.mysqlPath}mysql.exe")) return;
             Process proc = new Process();
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
@@ -44,10 +49,10 @@ namespace wampmon
             if (svc == APACHE)
             { // apache
                 proc.StartInfo.WorkingDirectory = Properties.Settings.Default.apachePath;
-                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\httpd.exe";
+                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}httpd.exe";
             }
             else // mysql
-                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\mysqld.exe";
+                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}mysqld.exe";
             proc.Start();
         }
 

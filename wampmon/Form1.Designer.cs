@@ -263,11 +263,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 189);
-            this.Controls.Add(this.pnlMySQLConfig);
-            this.Controls.Add(this.pnlApacheConfig);
             this.Controls.Add(this.pnlMySQL);
-            this.Controls.Add(this.pnlApache);
             this.Controls.Add(this.pnlTitlebar);
+            this.Controls.Add(this.pnlApache);
+            this.Controls.Add(this.pnlApacheConfig);
+            this.Controls.Add(this.pnlMySQLConfig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(200, 150);
             this.Name = "frmMain";
