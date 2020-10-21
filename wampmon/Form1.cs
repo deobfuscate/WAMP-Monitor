@@ -12,8 +12,6 @@ namespace wampmon
         private const int WM_NCLBUTTONDOWN = 0xA1;
         private const int HT_CAPTION = 0x2;
         private const int GRIP_SIZE = 14;
-        private const bool APACHE = true;
-        private const bool MYSQL = false;
 
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
@@ -38,7 +36,7 @@ namespace wampmon
             }
         }
 
-        private void StartService(bool svc)
+        private void StartService(string svc)
         {
             if (!File.Exists($"{Properties.Settings.Default.apachePath}httpd.exe")) return;
             if (!File.Exists($"{Properties.Settings.Default.mysqlPath}mysql.exe")) return;
@@ -46,13 +44,13 @@ namespace wampmon
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.CreateNoWindow = true;
-            if (svc == APACHE)
+            if (svc == "httpd.exe")
             { // apache
                 proc.StartInfo.WorkingDirectory = Properties.Settings.Default.apachePath;
                 proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}httpd.exe";
             }
             else // mysql
-                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}mysqld.exe";
+                proc.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}mysqld.exe";
             proc.Start();
         }
 
@@ -67,7 +65,7 @@ namespace wampmon
             if (IsRunning("httpd"))
                 KillService("httpd");
             else
-                StartService(APACHE);
+                StartService("httpd.exe");
         }
 
         private void btnMySQL_Click(object sender, EventArgs e)
@@ -75,7 +73,7 @@ namespace wampmon
             if (IsRunning("mysqld"))
                 KillService("mysqld");
             else
-                StartService(MYSQL);
+                StartService("mysqld.exe");
         }
 
         private bool IsRunning(string target)
