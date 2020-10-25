@@ -38,19 +38,23 @@ namespace wampmon
 
         private void StartService(string svc)
         {
-            if (!File.Exists($"{Properties.Settings.Default.apachePath}httpd.exe")) return;
-            if (!File.Exists($"{Properties.Settings.Default.mysqlPath}mysql.exe")) return;
+            string apacheExe = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
+            string mysqlExe = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            if (!File.Exists(apacheExe) || !File.Exists(mysqlExe)) return;
             Process proc = new Process();
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.CreateNoWindow = true;
             if (svc == "httpd.exe")
             { // apache
-                proc.StartInfo.WorkingDirectory = Properties.Settings.Default.apachePath;
-                proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}httpd.exe";
+                proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
+                proc.StartInfo.FileName = apacheExe;
             }
             else // mysql
-                proc.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}mysqld.exe";
+            {
+                proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.mysqlPath}\\bin";
+                proc.StartInfo.FileName = mysqlExe;
+            }
             proc.Start();
         }
 
@@ -163,6 +167,7 @@ namespace wampmon
         private void ApacheConfigClick(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            folderBrowser.Description = "Choose Apache directory.\nUsually C:\\Program Files\\Apache";
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.apachePath = folderBrowser.SelectedPath;
@@ -179,6 +184,7 @@ namespace wampmon
         private void MySQLConfigClick(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            folderBrowser.Description = "Choose MySQL directory.\nUsually C:\\Program Files\\MySQL";
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.mysqlPath = folderBrowser.SelectedPath;
