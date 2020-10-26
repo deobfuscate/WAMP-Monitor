@@ -39,7 +39,7 @@ namespace wampmon
         private void StartService(string svc)
         {
             string apacheExe = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
-            string mysqlExe = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            string mysqlExe = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysqld.exe";
             if (!File.Exists(apacheExe) || !File.Exists(mysqlExe)) return;
             Process proc = new Process();
             proc.StartInfo.UseShellExecute = false;
@@ -56,12 +56,14 @@ namespace wampmon
                 proc.StartInfo.FileName = mysqlExe;
             }
             proc.Start();
+            CheckServices();
         }
 
         private void KillService(string target)
         {
             foreach (var process in Process.GetProcessesByName(target))
                 process.Kill();
+            CheckServices();
         }
 
         private void btnApache_Click(object sender, EventArgs e)
