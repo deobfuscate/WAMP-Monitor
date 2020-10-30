@@ -46,6 +46,8 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
+            this.lblApacheVer = new System.Windows.Forms.Label();
+            this.lblMySQLVer = new System.Windows.Forms.Label();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
@@ -114,6 +116,7 @@
             // pnlApache
             // 
             this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlApache.Controls.Add(this.lblApacheVer);
             this.pnlApache.Controls.Add(this.lblApacheStatus);
             this.pnlApache.Controls.Add(this.btnApache);
             this.pnlApache.Controls.Add(this.lblApacheTitle);
@@ -127,7 +130,7 @@
             this.lblApacheStatus.AutoSize = true;
             this.lblApacheStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.lblApacheStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblApacheStatus.Location = new System.Drawing.Point(8, 40);
+            this.lblApacheStatus.Location = new System.Drawing.Point(8, 55);
             this.lblApacheStatus.Name = "lblApacheStatus";
             this.lblApacheStatus.Size = new System.Drawing.Size(74, 25);
             this.lblApacheStatus.TabIndex = 2;
@@ -162,6 +165,7 @@
             // pnlMySQL
             // 
             this.pnlMySQL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlMySQL.Controls.Add(this.lblMySQLVer);
             this.pnlMySQL.Controls.Add(this.lblMySQLStatus);
             this.pnlMySQL.Controls.Add(this.btnMySQL);
             this.pnlMySQL.Controls.Add(this.lblMySQLTitle);
@@ -175,7 +179,7 @@
             this.lblMySQLStatus.AutoSize = true;
             this.lblMySQLStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.lblMySQLStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblMySQLStatus.Location = new System.Drawing.Point(8, 40);
+            this.lblMySQLStatus.Location = new System.Drawing.Point(8, 56);
             this.lblMySQLStatus.Name = "lblMySQLStatus";
             this.lblMySQLStatus.Size = new System.Drawing.Size(74, 25);
             this.lblMySQLStatus.TabIndex = 3;
@@ -257,6 +261,26 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
+            // lblApacheVer
+            // 
+            this.lblApacheVer.AutoSize = true;
+            this.lblApacheVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApacheVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblApacheVer.Location = new System.Drawing.Point(9, 33);
+            this.lblApacheVer.Name = "lblApacheVer";
+            this.lblApacheVer.Size = new System.Drawing.Size(0, 20);
+            this.lblApacheVer.TabIndex = 3;
+            // 
+            // lblMySQLVer
+            // 
+            this.lblMySQLVer.AutoSize = true;
+            this.lblMySQLVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMySQLVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblMySQLVer.Location = new System.Drawing.Point(9, 33);
+            this.lblMySQLVer.Name = "lblMySQLVer";
+            this.lblMySQLVer.Size = new System.Drawing.Size(0, 20);
+            this.lblMySQLVer.TabIndex = 4;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,6 +327,8 @@
         private System.Windows.Forms.Label lblApacheConfig;
         private System.Windows.Forms.Panel pnlMySQLConfig;
         private System.Windows.Forms.Label lblMySQLConfig;
+        private System.Windows.Forms.Label lblApacheVer;
+        private System.Windows.Forms.Label lblMySQLVer;
     }
 }
 

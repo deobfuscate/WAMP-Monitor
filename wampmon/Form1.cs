@@ -34,6 +34,40 @@ namespace wampmon
             {
                 pnlMySQLConfig.Hide();
             }
+
+            string output = GetApacheVer();
+            lblApacheVer.Text = "Version: " + output.Split(' ')[2];
+            output = GetMySQLVer();
+            lblMySQLVer.Text = "Version: MySQL " + output.Split(' ')[3];
+        }
+
+        private static string GetApacheVer()
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.Arguments = "-v";
+            proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
+            proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
+            proc.Start();
+            string output = proc.StandardOutput.ReadToEnd();
+            proc.WaitForExit();
+            return output;
+        }
+
+        private static string GetMySQLVer()
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.Arguments = "-V";
+            proc.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            proc.Start();
+            string output = proc.StandardOutput.ReadToEnd();
+            proc.WaitForExit();
+            return output;
         }
 
         private void StartService(string svc)
