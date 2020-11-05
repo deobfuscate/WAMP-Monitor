@@ -36,9 +36,9 @@ namespace wampmon
             }
 
             string output = GetApacheVer();
-            lblApacheVer.Text = "Version: " + output.Split(' ')[2];
+            lblApacheVer.Text = "Version: " + output.Split(' ')[2].Split('/')[1];
             output = GetMySQLVer();
-            lblMySQLVer.Text = "Version: MySQL " + output.Split(' ')[3];
+            lblMySQLVer.Text = "Version: " + output.Split(' ')[3];
         }
 
         private static string GetApacheVer()
