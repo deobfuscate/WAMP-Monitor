@@ -233,5 +233,11 @@ namespace wampmon
         {
             MySQLConfigClick(sender, e);
         }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            var frm = new frmLogs();
+            frm.Show();
+        }
     }
 }

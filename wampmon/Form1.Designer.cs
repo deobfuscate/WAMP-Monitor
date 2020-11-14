@@ -34,10 +34,12 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlApache = new System.Windows.Forms.Panel();
+            this.lblApacheVer = new System.Windows.Forms.Label();
             this.lblApacheStatus = new System.Windows.Forms.Label();
             this.btnApache = new System.Windows.Forms.Button();
             this.lblApacheTitle = new System.Windows.Forms.Label();
             this.pnlMySQL = new System.Windows.Forms.Panel();
+            this.lblMySQLVer = new System.Windows.Forms.Label();
             this.lblMySQLStatus = new System.Windows.Forms.Label();
             this.btnMySQL = new System.Windows.Forms.Button();
             this.lblMySQLTitle = new System.Windows.Forms.Label();
@@ -46,8 +48,7 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
-            this.lblApacheVer = new System.Windows.Forms.Label();
-            this.lblMySQLVer = new System.Windows.Forms.Label();
+            this.btnLogs = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
@@ -118,12 +119,23 @@
             this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlApache.Controls.Add(this.lblApacheVer);
             this.pnlApache.Controls.Add(this.lblApacheStatus);
+            this.pnlApache.Controls.Add(this.btnLogs);
             this.pnlApache.Controls.Add(this.btnApache);
             this.pnlApache.Controls.Add(this.lblApacheTitle);
             this.pnlApache.Location = new System.Drawing.Point(12, 43);
             this.pnlApache.Name = "pnlApache";
             this.pnlApache.Size = new System.Drawing.Size(259, 134);
             this.pnlApache.TabIndex = 2;
+            // 
+            // lblApacheVer
+            // 
+            this.lblApacheVer.AutoSize = true;
+            this.lblApacheVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApacheVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblApacheVer.Location = new System.Drawing.Point(9, 33);
+            this.lblApacheVer.Name = "lblApacheVer";
+            this.lblApacheVer.Size = new System.Drawing.Size(0, 20);
+            this.lblApacheVer.TabIndex = 3;
             // 
             // lblApacheStatus
             // 
@@ -173,6 +185,16 @@
             this.pnlMySQL.Name = "pnlMySQL";
             this.pnlMySQL.Size = new System.Drawing.Size(259, 134);
             this.pnlMySQL.TabIndex = 2;
+            // 
+            // lblMySQLVer
+            // 
+            this.lblMySQLVer.AutoSize = true;
+            this.lblMySQLVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMySQLVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblMySQLVer.Location = new System.Drawing.Point(9, 33);
+            this.lblMySQLVer.Name = "lblMySQLVer";
+            this.lblMySQLVer.Size = new System.Drawing.Size(0, 20);
+            this.lblMySQLVer.TabIndex = 4;
             // 
             // lblMySQLStatus
             // 
@@ -261,25 +283,20 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
-            // lblApacheVer
+            // btnLogs
             // 
-            this.lblApacheVer.AutoSize = true;
-            this.lblApacheVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApacheVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblApacheVer.Location = new System.Drawing.Point(9, 33);
-            this.lblApacheVer.Name = "lblApacheVer";
-            this.lblApacheVer.Size = new System.Drawing.Size(0, 20);
-            this.lblApacheVer.TabIndex = 3;
-            // 
-            // lblMySQLVer
-            // 
-            this.lblMySQLVer.AutoSize = true;
-            this.lblMySQLVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMySQLVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblMySQLVer.Location = new System.Drawing.Point(9, 33);
-            this.lblMySQLVer.Name = "lblMySQLVer";
-            this.lblMySQLVer.Size = new System.Drawing.Size(0, 20);
-            this.lblMySQLVer.TabIndex = 4;
+            this.btnLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLogs.FlatAppearance.BorderSize = 0;
+            this.btnLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogs.ForeColor = System.Drawing.Color.White;
+            this.btnLogs.Location = new System.Drawing.Point(53, 80);
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(94, 41);
+            this.btnLogs.TabIndex = 1;
+            this.btnLogs.Text = "Logs";
+            this.btnLogs.UseVisualStyleBackColor = false;
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
             // frmMain
             // 
@@ -329,6 +346,7 @@
         private System.Windows.Forms.Label lblMySQLConfig;
         private System.Windows.Forms.Label lblApacheVer;
         private System.Windows.Forms.Label lblMySQLVer;
+        private System.Windows.Forms.Button btnLogs;
     }
 }
 
