@@ -236,7 +236,7 @@ namespace wampmon
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            var frm = new frmLogs();
+            var frm = new frmLogs(Properties.Settings.Default.apachePath + "\\logs\\access.log");
             frm.Show();
         }
     }

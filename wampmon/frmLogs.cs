@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -15,13 +16,14 @@ namespace wampmon
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
-
-        public frmLogs()
+        private string apacheLogFile;
+        
+        public frmLogs(string logFile)
         {
             InitializeComponent();
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
-
+            apacheLogFile = logFile;
         }
 
         private void TitleDoubleClick(object sender, EventArgs e)
@@ -74,6 +76,12 @@ namespace wampmon
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void frmLogs_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(apacheLogFile))
+                textBox1.Text = File.ReadAllText(apacheLogFile);
         }
     }
 }

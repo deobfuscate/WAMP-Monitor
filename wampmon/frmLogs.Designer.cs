@@ -98,9 +98,11 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(12, 37);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(538, 278);
             this.textBox1.TabIndex = 3;
             // 
@@ -115,6 +117,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogs";
             this.Text = "WAMP Monitor - Access logs";
+            this.Load += new System.EventHandler(this.frmLogs_Load);
             this.pnlTitlebar.ResumeLayout(false);
             this.pnlTitlebar.PerformLayout();
             this.ResumeLayout(false);
