@@ -32,7 +32,8 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLogs = new System.Windows.Forms.TextBox();
+            this.btnClearLogs = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,25 +95,42 @@
             this.lblTitle.Text = "WAMP Monitor - Access Logs";
             this.lblTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleLabelMouseMove);
             // 
-            // textBox1
+            // txtLogs
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 37);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(538, 278);
-            this.textBox1.TabIndex = 3;
+            this.txtLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLogs.ForeColor = System.Drawing.Color.White;
+            this.txtLogs.Location = new System.Drawing.Point(12, 37);
+            this.txtLogs.Multiline = true;
+            this.txtLogs.Name = "txtLogs";
+            this.txtLogs.ReadOnly = true;
+            this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLogs.Size = new System.Drawing.Size(538, 278);
+            this.txtLogs.TabIndex = 3;
+            // 
+            // btnClearLogs
+            // 
+            this.btnClearLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnClearLogs.FlatAppearance.BorderSize = 0;
+            this.btnClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnClearLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearLogs.ForeColor = System.Drawing.Color.White;
+            this.btnClearLogs.Location = new System.Drawing.Point(456, 321);
+            this.btnClearLogs.Name = "btnClearLogs";
+            this.btnClearLogs.Size = new System.Drawing.Size(94, 36);
+            this.btnClearLogs.TabIndex = 4;
+            this.btnClearLogs.Text = "Clear Logs";
+            this.btnClearLogs.UseVisualStyleBackColor = false;
+            this.btnClearLogs.Click += new System.EventHandler(this.btnClearLogs_Click);
             // 
             // frmLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(562, 327);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(562, 365);
+            this.Controls.Add(this.btnClearLogs);
+            this.Controls.Add(this.txtLogs);
             this.Controls.Add(this.pnlTitlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogs";
@@ -131,6 +149,7 @@
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLogs;
+        private System.Windows.Forms.Button btnClearLogs;
     }
 }

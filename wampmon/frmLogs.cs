@@ -81,7 +81,13 @@ namespace wampmon
         private void frmLogs_Load(object sender, EventArgs e)
         {
             if (File.Exists(apacheLogFile))
-                textBox1.Text = File.ReadAllText(apacheLogFile);
+                txtLogs.Text = File.ReadAllText(apacheLogFile);
+        }
+
+        private void btnClearLogs_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(apacheLogFile, "");
+            txtLogs.Text = File.ReadAllText(apacheLogFile);
         }
     }
 }
