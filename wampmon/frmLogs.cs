@@ -89,5 +89,10 @@ namespace wampmon
             File.WriteAllText(apacheLogFile, "");
             txtLogs.Text = File.ReadAllText(apacheLogFile);
         }
+
+        private void btnCloseWindow_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

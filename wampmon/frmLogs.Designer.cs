@@ -30,10 +30,11 @@
         {
             this.pnlTitlebar = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnCloseWindow = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtLogs = new System.Windows.Forms.TextBox();
             this.btnClearLogs = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             this.pnlTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.pnlTitlebar.Controls.Add(this.btnMinimize);
-            this.pnlTitlebar.Controls.Add(this.btnClose);
+            this.pnlTitlebar.Controls.Add(this.btnCloseWindow);
             this.pnlTitlebar.Controls.Add(this.lblTitle);
             this.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitlebar.Location = new System.Drawing.Point(0, 0);
@@ -67,21 +68,21 @@
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // btnClose
+            // btnCloseWindow
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(517, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(45, 31);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Text = "✕";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnCloseWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.btnCloseWindow.FlatAppearance.BorderSize = 0;
+            this.btnCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseWindow.ForeColor = System.Drawing.Color.White;
+            this.btnCloseWindow.Location = new System.Drawing.Point(517, 0);
+            this.btnCloseWindow.Name = "btnCloseWindow";
+            this.btnCloseWindow.Size = new System.Drawing.Size(45, 31);
+            this.btnCloseWindow.TabIndex = 2;
+            this.btnCloseWindow.Text = "✕";
+            this.btnCloseWindow.UseVisualStyleBackColor = false;
+            this.btnCloseWindow.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -115,7 +116,7 @@
             this.btnClearLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnClearLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearLogs.ForeColor = System.Drawing.Color.White;
-            this.btnClearLogs.Location = new System.Drawing.Point(456, 321);
+            this.btnClearLogs.Location = new System.Drawing.Point(356, 321);
             this.btnClearLogs.Name = "btnClearLogs";
             this.btnClearLogs.Size = new System.Drawing.Size(94, 36);
             this.btnClearLogs.TabIndex = 4;
@@ -123,12 +124,28 @@
             this.btnClearLogs.UseVisualStyleBackColor = false;
             this.btnClearLogs.Click += new System.EventHandler(this.btnClearLogs_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(456, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 36);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCloseWindow_Click);
+            // 
             // frmLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 365);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClearLogs);
             this.Controls.Add(this.txtLogs);
             this.Controls.Add(this.pnlTitlebar);
@@ -147,9 +164,10 @@
 
         private System.Windows.Forms.Panel pnlTitlebar;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCloseWindow;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtLogs;
         private System.Windows.Forms.Button btnClearLogs;
+        private System.Windows.Forms.Button button1;
     }
 }
