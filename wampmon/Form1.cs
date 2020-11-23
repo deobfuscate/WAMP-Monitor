@@ -27,13 +27,9 @@ namespace wampmon
             pnlApacheConfig.BringToFront();
             pnlMySQLConfig.BringToFront();
             if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath))
-            {
                 pnlApacheConfig.Hide();
-            }
             if (!string.IsNullOrEmpty(Properties.Settings.Default.mysqlPath))
-            {
                 pnlMySQLConfig.Hide();
-            }
 
             string output = GetApacheVer();
             lblApacheVer.Text = "Version: " + output.Split(' ')[2].Split('/')[1];
@@ -150,7 +146,8 @@ namespace wampmon
 
         private void TitleDoubleClick(object sender, EventArgs e)
         {
-            if (WindowState == FormWindowState.Normal) WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
             else WindowState = FormWindowState.Normal;
         }
 
@@ -165,8 +162,8 @@ namespace wampmon
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Rectangle rc = new Rectangle(ClientSize.Width - GRIP_SIZE, ClientSize.Height - GRIP_SIZE, GRIP_SIZE, GRIP_SIZE);
-            ControlPaint.DrawSizeGrip(e.Graphics, BackColor, rc);
+            Rectangle rect = new Rectangle(ClientSize.Width - GRIP_SIZE, ClientSize.Height - GRIP_SIZE, GRIP_SIZE, GRIP_SIZE);
+            ControlPaint.DrawSizeGrip(e.Graphics, BackColor, rect);
         }
 
         protected override void WndProc(ref Message m)
