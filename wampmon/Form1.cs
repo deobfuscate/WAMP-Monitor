@@ -136,6 +136,10 @@ namespace wampmon
                 svcLabel.Text = "Offline";
                 svcButton.Text = "Start";
             }
+            if (IsRunning("httpd"))
+                btnLogs.Enabled = false;
+            else
+                btnLogs.Enabled = true;
         }
 
         private void CheckServices()
@@ -233,8 +237,8 @@ namespace wampmon
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            var frm = new frmLogs(Properties.Settings.Default.apachePath + "\\logs\\access.log");
-            frm.Show();
+            var logsWindow = new frmLogs(Properties.Settings.Default.apachePath + "\\logs\\access.log");
+            logsWindow.Show();
         }
     }
 }
