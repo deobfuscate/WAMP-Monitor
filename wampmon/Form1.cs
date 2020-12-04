@@ -137,9 +137,9 @@ namespace wampmon
                 svcButton.Text = "Start";
             }
             if (IsRunning("httpd"))
-                btnLogs.Enabled = false;
+                btnLogs.Click -= btnLogs_Click;
             else
-                btnLogs.Enabled = true;
+                btnLogs.Click += btnLogs_Click;
         }
 
         private void CheckServices()
