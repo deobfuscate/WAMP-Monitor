@@ -36,6 +36,7 @@
             this.pnlApache = new System.Windows.Forms.Panel();
             this.lblApacheVer = new System.Windows.Forms.Label();
             this.lblApacheStatus = new System.Windows.Forms.Label();
+            this.btnLogs = new System.Windows.Forms.Button();
             this.btnApache = new System.Windows.Forms.Button();
             this.lblApacheTitle = new System.Windows.Forms.Label();
             this.pnlMySQL = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
-            this.btnLogs = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
@@ -132,7 +132,7 @@
             this.lblApacheVer.AutoSize = true;
             this.lblApacheVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApacheVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblApacheVer.Location = new System.Drawing.Point(9, 33);
+            this.lblApacheVer.Location = new System.Drawing.Point(91, 10);
             this.lblApacheVer.Name = "lblApacheVer";
             this.lblApacheVer.Size = new System.Drawing.Size(0, 20);
             this.lblApacheVer.TabIndex = 3;
@@ -142,11 +142,26 @@
             this.lblApacheStatus.AutoSize = true;
             this.lblApacheStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.lblApacheStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblApacheStatus.Location = new System.Drawing.Point(8, 55);
+            this.lblApacheStatus.Location = new System.Drawing.Point(8, 38);
             this.lblApacheStatus.Name = "lblApacheStatus";
             this.lblApacheStatus.Size = new System.Drawing.Size(74, 25);
             this.lblApacheStatus.TabIndex = 2;
             this.lblApacheStatus.Text = "Offline";
+            // 
+            // btnLogs
+            // 
+            this.btnLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnLogs.FlatAppearance.BorderSize = 0;
+            this.btnLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogs.ForeColor = System.Drawing.Color.White;
+            this.btnLogs.Location = new System.Drawing.Point(53, 80);
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(94, 41);
+            this.btnLogs.TabIndex = 1;
+            this.btnLogs.Text = "Logs";
+            this.btnLogs.UseVisualStyleBackColor = false;
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
             // btnApache
             // 
@@ -191,7 +206,7 @@
             this.lblMySQLVer.AutoSize = true;
             this.lblMySQLVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMySQLVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblMySQLVer.Location = new System.Drawing.Point(9, 33);
+            this.lblMySQLVer.Location = new System.Drawing.Point(89, 9);
             this.lblMySQLVer.Name = "lblMySQLVer";
             this.lblMySQLVer.Size = new System.Drawing.Size(0, 20);
             this.lblMySQLVer.TabIndex = 4;
@@ -201,7 +216,7 @@
             this.lblMySQLStatus.AutoSize = true;
             this.lblMySQLStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.lblMySQLStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblMySQLStatus.Location = new System.Drawing.Point(8, 56);
+            this.lblMySQLStatus.Location = new System.Drawing.Point(8, 38);
             this.lblMySQLStatus.Name = "lblMySQLStatus";
             this.lblMySQLStatus.Size = new System.Drawing.Size(74, 25);
             this.lblMySQLStatus.TabIndex = 3;
@@ -282,21 +297,6 @@
             this.lblMySQLConfig.Text = "MySQL directory is not found. Click here to configure.";
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
-            // 
-            // btnLogs
-            // 
-            this.btnLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnLogs.FlatAppearance.BorderSize = 0;
-            this.btnLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogs.ForeColor = System.Drawing.Color.White;
-            this.btnLogs.Location = new System.Drawing.Point(53, 80);
-            this.btnLogs.Name = "btnLogs";
-            this.btnLogs.Size = new System.Drawing.Size(94, 41);
-            this.btnLogs.TabIndex = 1;
-            this.btnLogs.Text = "Logs";
-            this.btnLogs.UseVisualStyleBackColor = false;
-            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
             // 
             // frmMain
             // 

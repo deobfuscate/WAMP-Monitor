@@ -32,9 +32,9 @@ namespace wampmon
                 pnlMySQLConfig.Hide();
 
             string output = GetApacheVer();
-            lblApacheVer.Text = "Version: " + output.Split(' ')[2].Split('/')[1];
+            lblApacheVer.Text = "v" + output.Split(' ')[2].Split('/')[1];
             output = GetMySQLVer();
-            lblMySQLVer.Text = "Version: " + output.Split(' ')[3];
+            lblMySQLVer.Text = "v" + output.Split(' ')[3];
         }
 
         private static string GetApacheVer()
