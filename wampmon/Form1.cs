@@ -26,15 +26,17 @@ namespace wampmon
             CheckServices();
             pnlApacheConfig.BringToFront();
             pnlMySQLConfig.BringToFront();
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath))
+            string output;
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath)) {
+                output = GetApacheVer();
+                lblApacheVer.Text = "v" + output.Split(' ')[2].Split('/')[1];
                 pnlApacheConfig.Hide();
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.mysqlPath))
+            }
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.mysqlPath)) {
+                output = GetMySQLVer();
+                lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
-
-            string output = GetApacheVer();
-            lblApacheVer.Text = "v" + output.Split(' ')[2].Split('/')[1];
-            output = GetMySQLVer();
-            lblMySQLVer.Text = "v" + output.Split(' ')[3];
+            }
         }
 
         private static string GetApacheVer()
