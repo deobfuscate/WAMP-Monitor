@@ -49,6 +49,7 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
+            this.lblPHPVer = new System.Windows.Forms.Label();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
@@ -117,6 +118,7 @@
             // pnlApache
             // 
             this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlApache.Controls.Add(this.lblPHPVer);
             this.pnlApache.Controls.Add(this.lblApacheVer);
             this.pnlApache.Controls.Add(this.lblApacheStatus);
             this.pnlApache.Controls.Add(this.btnLogs);
@@ -298,6 +300,16 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
+            // lblPHPVer
+            // 
+            this.lblPHPVer.AutoSize = true;
+            this.lblPHPVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPHPVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblPHPVer.Location = new System.Drawing.Point(162, 10);
+            this.lblPHPVer.Name = "lblPHPVer";
+            this.lblPHPVer.Size = new System.Drawing.Size(0, 20);
+            this.lblPHPVer.TabIndex = 4;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +359,7 @@
         private System.Windows.Forms.Label lblApacheVer;
         private System.Windows.Forms.Label lblMySQLVer;
         private System.Windows.Forms.Button btnLogs;
+        private System.Windows.Forms.Label lblPHPVer;
     }
 }
 

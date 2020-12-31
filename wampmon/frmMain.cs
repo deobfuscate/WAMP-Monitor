@@ -37,6 +37,8 @@ namespace wampmon
                 lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
             }
+            output = GetPHPVer();
+            lblPHPVer.Text = "PHP v" + output.Split(' ')[1];
         }
 
         private static string GetApacheVer()
@@ -62,6 +64,20 @@ namespace wampmon
             proc.StartInfo.CreateNoWindow = true;
             proc.StartInfo.Arguments = "-V";
             proc.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            proc.Start();
+            string output = proc.StandardOutput.ReadToEnd();
+            proc.WaitForExit();
+            return output;
+        }
+
+        private static string GetPHPVer()
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = false;
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.CreateNoWindow = true;
+            proc.StartInfo.Arguments = "-v";
+            proc.StartInfo.FileName = "..\\..\\..\\..\\..\\..\\apps\\php\\php.exe";
             proc.Start();
             string output = proc.StandardOutput.ReadToEnd();
             proc.WaitForExit();
