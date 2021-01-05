@@ -34,6 +34,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlApache = new System.Windows.Forms.Panel();
+            this.lblPHPVer = new System.Windows.Forms.Label();
             this.lblApacheVer = new System.Windows.Forms.Label();
             this.lblApacheStatus = new System.Windows.Forms.Label();
             this.btnLogs = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
-            this.lblPHPVer = new System.Windows.Forms.Label();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
@@ -128,6 +128,16 @@
             this.pnlApache.Name = "pnlApache";
             this.pnlApache.Size = new System.Drawing.Size(259, 134);
             this.pnlApache.TabIndex = 2;
+            // 
+            // lblPHPVer
+            // 
+            this.lblPHPVer.AutoSize = true;
+            this.lblPHPVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPHPVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblPHPVer.Location = new System.Drawing.Point(162, 10);
+            this.lblPHPVer.Name = "lblPHPVer";
+            this.lblPHPVer.Size = new System.Drawing.Size(0, 20);
+            this.lblPHPVer.TabIndex = 4;
             // 
             // lblApacheVer
             // 
@@ -299,16 +309,6 @@
             this.lblMySQLConfig.Text = "MySQL directory is not found. Click here to configure.";
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
-            // 
-            // lblPHPVer
-            // 
-            this.lblPHPVer.AutoSize = true;
-            this.lblPHPVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPHPVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblPHPVer.Location = new System.Drawing.Point(162, 10);
-            this.lblPHPVer.Name = "lblPHPVer";
-            this.lblPHPVer.Size = new System.Drawing.Size(0, 20);
-            this.lblPHPVer.TabIndex = 4;
             // 
             // frmMain
             // 
