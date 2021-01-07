@@ -188,13 +188,13 @@ namespace wampmon
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Rectangle rect = new Rectangle(ClientSize.Width - GRIP_SIZE, ClientSize.Height - GRIP_SIZE, GRIP_SIZE, GRIP_SIZE);
-            ControlPaint.DrawSizeGrip(e.Graphics, BackColor, rect);
+            /*Rectangle rect = new Rectangle(ClientSize.Width - GRIP_SIZE, ClientSize.Height - GRIP_SIZE, GRIP_SIZE, GRIP_SIZE);
+            ControlPaint.DrawSizeGrip(e.Graphics, BackColor, rect);*/
         }
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == 0x84)
+            /*if (m.Msg == 0x84)
             {  // Trap WM_NCHITTEST
                 Point pos = new Point(m.LParam.ToInt32());
                 pos = PointToClient(pos);
@@ -204,7 +204,7 @@ namespace wampmon
                     m.Result = (IntPtr)17; // HTBOTTOMRIGHT
                     return;
                 }
-            }
+            }*/
             base.WndProc(ref m);
         }
 
