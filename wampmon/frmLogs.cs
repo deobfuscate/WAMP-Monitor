@@ -94,5 +94,13 @@ namespace wampmon
         {
             Close();
         }
+
+        private void ResizeLogWindow(object sender, EventArgs e)
+        {
+            txtLogs.Width = Width - 24;
+            txtLogs.Height = Height - btnClearLogs.Height - 50;
+            btnClearLogs.Top = Height - 44;
+            button1.Top = Height - 44;
+        }
     }
 }
