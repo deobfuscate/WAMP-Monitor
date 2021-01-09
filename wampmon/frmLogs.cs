@@ -101,6 +101,8 @@ namespace wampmon
             txtLogs.Height = Height - btnClearLogs.Height - 50;
             btnClearLogs.Top = Height - 44;
             button1.Top = Height - 44;
+            btnCloseWindow.Left = Width - btnCloseWindow.Width;
+            btnMinimize.Left = Width - btnCloseWindow.Width - btnMinimize.Width;
         }
     }
 }
