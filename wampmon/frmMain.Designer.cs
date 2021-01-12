@@ -50,16 +50,19 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitlebar.SuspendLayout();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
             this.pnlApacheConfig.SuspendLayout();
             this.pnlMySQLConfig.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitlebar
             // 
             this.pnlTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.pnlTitlebar.Controls.Add(this.pictureBox1);
             this.pnlTitlebar.Controls.Add(this.btnMinimize);
             this.pnlTitlebar.Controls.Add(this.btnClose);
             this.pnlTitlebar.Controls.Add(this.lblTitle);
@@ -108,7 +111,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(8, 6);
+            this.lblTitle.Location = new System.Drawing.Point(43, 6);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(115, 20);
             this.lblTitle.TabIndex = 0;
@@ -310,6 +313,16 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::wampmon.Properties.Resources.app;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,6 +346,7 @@
             this.pnlMySQL.PerformLayout();
             this.pnlApacheConfig.ResumeLayout(false);
             this.pnlMySQLConfig.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,6 +374,7 @@
         private System.Windows.Forms.Label lblMySQLVer;
         private System.Windows.Forms.Button btnLogs;
         private System.Windows.Forms.Label lblPHPVer;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
