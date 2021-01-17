@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTitlebar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -50,13 +52,12 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitlebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
             this.pnlApacheConfig.SuspendLayout();
             this.pnlMySQLConfig.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitlebar
@@ -73,6 +74,16 @@
             this.pnlTitlebar.TabIndex = 1;
             this.pnlTitlebar.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
             this.pnlTitlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::wampmon.Properties.Resources.app;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -313,16 +324,6 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::wampmon.Properties.Resources.app;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,18 +336,19 @@
             this.Controls.Add(this.pnlApacheConfig);
             this.Controls.Add(this.pnlMySQLConfig);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(200, 150);
             this.Name = "frmMain";
             this.Text = "WAMP Monitor";
             this.pnlTitlebar.ResumeLayout(false);
             this.pnlTitlebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlApache.ResumeLayout(false);
             this.pnlApache.PerformLayout();
             this.pnlMySQL.ResumeLayout(false);
             this.pnlMySQL.PerformLayout();
             this.pnlApacheConfig.ResumeLayout(false);
             this.pnlMySQLConfig.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
