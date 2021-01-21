@@ -46,5 +46,17 @@ namespace wampmon.Properties {
                 this["mysqlPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string phpPath {
+            get {
+                return ((string)(this["phpPath"]));
+            }
+            set {
+                this["phpPath"] = value;
+            }
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace wampmon
                 lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
             }
-            if (File.Exists("..\\..\\..\\..\\..\\..\\apps\\php\\php.exe")) { 
+            if (File.Exists($"{Properties.Settings.Default.phpPath}\\php.exe")) { 
                 output = GetPHPVer();
                 lblPHPVer.Text = "PHP v" + output.Split(' ')[1];
             }
@@ -81,7 +81,7 @@ namespace wampmon
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.CreateNoWindow = true;
             proc.StartInfo.Arguments = "-v";
-            proc.StartInfo.FileName = "..\\..\\..\\..\\..\\..\\apps\\php\\php.exe";
+            proc.StartInfo.FileName = $"{Properties.Settings.Default.phpPath}\\php.exe";
             proc.Start();
             string output = proc.StandardOutput.ReadToEnd();
             proc.WaitForExit();
