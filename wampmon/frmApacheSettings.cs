@@ -16,14 +16,28 @@ namespace wampmon
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
-        private string apacheLogFile;
+        private string configFile;
         
-        public frmApacheSettings(string logFile)
+        public frmApacheSettings(string configFile)
         {
             InitializeComponent();
             DoubleBuffered = true;
             SetStyle(ControlStyles.ResizeRedraw, true);
-            apacheLogFile = logFile;
+            this.configFile = configFile;
+        }
+
+        private string ReadSetting(string filename, string setting)
+        {
+            string line;
+            StreamReader file = new StreamReader(filename);
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line == "" || line[0] == '#') continue;
+                var split = line.Split(' ');
+                if (split[0] == setting)
+                    return split[1];
+            }
+            return null;
         }
 
         private void TitleDoubleClick(object sender, EventArgs e)
@@ -80,14 +94,12 @@ namespace wampmon
 
         private void frmLogs_Load(object sender, EventArgs e)
         {
-            if (File.Exists(apacheLogFile))
-                txtLogs.Text = File.ReadAllText(apacheLogFile);
+            txtPort.Text = ReadSetting(configFile, "Listen");
         }
 
         private void btnClearLogs_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(apacheLogFile, "");
-            txtLogs.Text = File.ReadAllText(apacheLogFile);
+
         }
 
         private void btnCloseWindow_Click(object sender, EventArgs e)
@@ -97,8 +109,6 @@ namespace wampmon
 
         private void ResizeLogWindow(object sender, EventArgs e)
         {
-            txtLogs.Width = Width - 24;
-            txtLogs.Height = Height - btnSave.Height - 50;
             btnSave.Top = Height - 44;
             button1.Top = Height - 44;
             btnCloseWindow.Left = Width - btnCloseWindow.Width;

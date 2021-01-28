@@ -52,6 +52,7 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
+            this.btnApacheSettings = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlApache.SuspendLayout();
@@ -132,6 +133,7 @@
             // pnlApache
             // 
             this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.pnlApache.Controls.Add(this.btnApacheSettings);
             this.pnlApache.Controls.Add(this.lblPHPVer);
             this.pnlApache.Controls.Add(this.lblApacheVer);
             this.pnlApache.Controls.Add(this.lblApacheStatus);
@@ -324,6 +326,21 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
+            // btnApacheSettings
+            // 
+            this.btnApacheSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnApacheSettings.FlatAppearance.BorderSize = 0;
+            this.btnApacheSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnApacheSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApacheSettings.ForeColor = System.Drawing.Color.White;
+            this.btnApacheSettings.Location = new System.Drawing.Point(153, 33);
+            this.btnApacheSettings.Name = "btnApacheSettings";
+            this.btnApacheSettings.Size = new System.Drawing.Size(94, 41);
+            this.btnApacheSettings.TabIndex = 5;
+            this.btnApacheSettings.Text = "Settings";
+            this.btnApacheSettings.UseVisualStyleBackColor = false;
+            this.btnApacheSettings.Click += new System.EventHandler(this.btnApacheSettings_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +394,7 @@
         private System.Windows.Forms.Button btnLogs;
         private System.Windows.Forms.Label lblPHPVer;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnApacheSettings;
     }
 }
 

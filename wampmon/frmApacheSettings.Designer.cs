@@ -34,7 +34,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
             this.pnlTitlebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,17 +126,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCloseWindow_Click);
             // 
-            // txt
+            // txtPort
             // 
-            this.txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt.ForeColor = System.Drawing.Color.White;
-            this.txt.Location = new System.Drawing.Point(12, 52);
-            this.txt.Name = "txt";
-            this.txt.ReadOnly = true;
-            this.txt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt.Size = new System.Drawing.Size(212, 13);
-            this.txt.TabIndex = 3;
+            this.txtPort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtPort.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPort.ForeColor = System.Drawing.Color.White;
+            this.txtPort.Location = new System.Drawing.Point(12, 46);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPort.Size = new System.Drawing.Size(212, 13);
+            this.txtPort.TabIndex = 3;
             // 
             // frmApacheSettings
             // 
@@ -146,7 +145,7 @@
             this.ClientSize = new System.Drawing.Size(562, 365);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txt);
+            this.Controls.Add(this.txtPort);
             this.Controls.Add(this.pnlTitlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(300, 250);
@@ -169,6 +168,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtPort;
     }
 }

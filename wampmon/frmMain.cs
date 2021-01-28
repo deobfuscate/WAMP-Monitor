@@ -239,5 +239,11 @@ namespace wampmon
             var logsWindow = new frmLogs(Properties.Settings.Default.apachePath + "\\logs\\access.log");
             logsWindow.Show();
         }
+
+        private void btnApacheSettings_Click(object sender, EventArgs e)
+        {
+            var settings = new frmApacheSettings(Properties.Settings.Default.apachePath + "\\conf\\httpd.conf");
+            settings.Show();
+        }
     }
 }
