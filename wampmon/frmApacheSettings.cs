@@ -94,12 +94,12 @@ namespace wampmon
 
         private void frmLogs_Load(object sender, EventArgs e)
         {
+            txtDocRoot.Text = ReadSetting(configFile, "DocumentRoot");
+            txtServerName.Text = ReadSetting(configFile, "ServerName");
+            txtServerAdmin.Text = ReadSetting(configFile, "ServerAdmin");
             txtPort.Text = ReadSetting(configFile, "Listen");
-        }
-
-        private void btnClearLogs_Click(object sender, EventArgs e)
-        {
-
+            txtErrorLog.Text = ReadSetting(configFile, "ErrorLog");
+            txtLogLevel.Text = ReadSetting(configFile, "LogLevel");
         }
 
         private void btnCloseWindow_Click(object sender, EventArgs e)
@@ -113,6 +113,11 @@ namespace wampmon
             button1.Top = Height - 44;
             btnCloseWindow.Left = Width - btnCloseWindow.Width;
             btnMinimize.Left = Width - btnCloseWindow.Width - btnMinimize.Width;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
