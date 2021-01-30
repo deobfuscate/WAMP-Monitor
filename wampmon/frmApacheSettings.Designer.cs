@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmApacheSettings));
             this.pnlTitlebar = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnCloseWindow = new System.Windows.Forms.Button();
@@ -58,7 +59,7 @@
             this.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitlebar.Name = "pnlTitlebar";
-            this.pnlTitlebar.Size = new System.Drawing.Size(562, 31);
+            this.pnlTitlebar.Size = new System.Drawing.Size(400, 31);
             this.pnlTitlebar.TabIndex = 2;
             this.pnlTitlebar.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
             this.pnlTitlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
@@ -114,7 +115,7 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(14, 321);
+            this.btnSave.Location = new System.Drawing.Point(14, 214);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 36);
             this.btnSave.TabIndex = 4;
@@ -129,7 +130,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 321);
+            this.button1.Location = new System.Drawing.Point(114, 214);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 36);
             this.button1.TabIndex = 4;
@@ -146,7 +147,7 @@
             this.txtPort.Location = new System.Drawing.Point(103, 123);
             this.txtPort.Name = "txtPort";
             this.txtPort.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPort.Size = new System.Drawing.Size(61, 20);
+            this.txtPort.Size = new System.Drawing.Size(61, 22);
             this.txtPort.TabIndex = 3;
             // 
             // label1
@@ -178,7 +179,7 @@
             this.txtServerName.Location = new System.Drawing.Point(103, 67);
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtServerName.Size = new System.Drawing.Size(131, 22);
+            this.txtServerName.Size = new System.Drawing.Size(207, 22);
             this.txtServerName.TabIndex = 6;
             // 
             // label3
@@ -200,7 +201,7 @@
             this.txtServerAdmin.Location = new System.Drawing.Point(103, 95);
             this.txtServerAdmin.Name = "txtServerAdmin";
             this.txtServerAdmin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtServerAdmin.Size = new System.Drawing.Size(131, 22);
+            this.txtServerAdmin.Size = new System.Drawing.Size(207, 22);
             this.txtServerAdmin.TabIndex = 8;
             // 
             // label4
@@ -222,7 +223,7 @@
             this.txtLogLevel.Location = new System.Drawing.Point(103, 177);
             this.txtLogLevel.Name = "txtLogLevel";
             this.txtLogLevel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogLevel.Size = new System.Drawing.Size(131, 22);
+            this.txtLogLevel.Size = new System.Drawing.Size(207, 22);
             this.txtLogLevel.TabIndex = 10;
             // 
             // label5
@@ -244,7 +245,7 @@
             this.txtDocRoot.Location = new System.Drawing.Point(103, 39);
             this.txtDocRoot.Name = "txtDocRoot";
             this.txtDocRoot.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDocRoot.Size = new System.Drawing.Size(131, 22);
+            this.txtDocRoot.Size = new System.Drawing.Size(207, 22);
             this.txtDocRoot.TabIndex = 12;
             // 
             // label6
@@ -266,7 +267,7 @@
             this.txtErrorLog.Location = new System.Drawing.Point(103, 149);
             this.txtErrorLog.Name = "txtErrorLog";
             this.txtErrorLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtErrorLog.Size = new System.Drawing.Size(131, 22);
+            this.txtErrorLog.Size = new System.Drawing.Size(207, 22);
             this.txtErrorLog.TabIndex = 14;
             // 
             // frmApacheSettings
@@ -274,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(562, 365);
+            this.ClientSize = new System.Drawing.Size(400, 261);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtErrorLog);
             this.Controls.Add(this.label5);
@@ -291,6 +292,7 @@
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.pnlTitlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(300, 250);
             this.Name = "frmApacheSettings";
             this.Text = "WAMP Monitor - Access logs";

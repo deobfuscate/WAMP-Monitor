@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogs));
             this.pnlTitlebar = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnCloseWindow = new System.Windows.Forms.Button();
@@ -150,6 +151,7 @@
             this.Controls.Add(this.txtLogs);
             this.Controls.Add(this.pnlTitlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(300, 250);
             this.Name = "frmLogs";
             this.Text = "WAMP Monitor - Access logs";
