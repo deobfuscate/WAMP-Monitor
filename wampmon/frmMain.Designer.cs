@@ -36,12 +36,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlApache = new System.Windows.Forms.Panel();
-            this.lblPHPVer = new System.Windows.Forms.Label();
+            this.btnApacheSettings = new System.Windows.Forms.Button();
             this.lblApacheVer = new System.Windows.Forms.Label();
             this.lblApacheStatus = new System.Windows.Forms.Label();
             this.btnLogs = new System.Windows.Forms.Button();
             this.btnApache = new System.Windows.Forms.Button();
             this.lblApacheTitle = new System.Windows.Forms.Label();
+            this.lblPHPVer = new System.Windows.Forms.Label();
             this.pnlMySQL = new System.Windows.Forms.Panel();
             this.lblMySQLVer = new System.Windows.Forms.Label();
             this.lblMySQLStatus = new System.Windows.Forms.Label();
@@ -52,13 +53,17 @@
             this.lblApacheConfig = new System.Windows.Forms.Label();
             this.pnlMySQLConfig = new System.Windows.Forms.Panel();
             this.lblMySQLConfig = new System.Windows.Forms.Label();
-            this.btnApacheSettings = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPHPSettings = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
             this.pnlApacheConfig.SuspendLayout();
             this.pnlMySQLConfig.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitlebar
@@ -71,7 +76,7 @@
             this.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitlebar.Name = "pnlTitlebar";
-            this.pnlTitlebar.Size = new System.Drawing.Size(562, 31);
+            this.pnlTitlebar.Size = new System.Drawing.Size(284, 31);
             this.pnlTitlebar.TabIndex = 1;
             this.pnlTitlebar.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
             this.pnlTitlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
@@ -94,7 +99,7 @@
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(472, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(194, 0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(45, 31);
             this.btnMinimize.TabIndex = 3;
@@ -110,7 +115,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(517, 0);
+            this.btnClose.Location = new System.Drawing.Point(239, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(45, 31);
             this.btnClose.TabIndex = 2;
@@ -134,7 +139,6 @@
             // 
             this.pnlApache.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlApache.Controls.Add(this.btnApacheSettings);
-            this.pnlApache.Controls.Add(this.lblPHPVer);
             this.pnlApache.Controls.Add(this.lblApacheVer);
             this.pnlApache.Controls.Add(this.lblApacheStatus);
             this.pnlApache.Controls.Add(this.btnLogs);
@@ -145,15 +149,20 @@
             this.pnlApache.Size = new System.Drawing.Size(259, 134);
             this.pnlApache.TabIndex = 2;
             // 
-            // lblPHPVer
+            // btnApacheSettings
             // 
-            this.lblPHPVer.AutoSize = true;
-            this.lblPHPVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPHPVer.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblPHPVer.Location = new System.Drawing.Point(162, 10);
-            this.lblPHPVer.Name = "lblPHPVer";
-            this.lblPHPVer.Size = new System.Drawing.Size(0, 20);
-            this.lblPHPVer.TabIndex = 4;
+            this.btnApacheSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnApacheSettings.FlatAppearance.BorderSize = 0;
+            this.btnApacheSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnApacheSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApacheSettings.ForeColor = System.Drawing.Color.White;
+            this.btnApacheSettings.Location = new System.Drawing.Point(75, 80);
+            this.btnApacheSettings.Name = "btnApacheSettings";
+            this.btnApacheSettings.Size = new System.Drawing.Size(69, 41);
+            this.btnApacheSettings.TabIndex = 5;
+            this.btnApacheSettings.Text = "Settings";
+            this.btnApacheSettings.UseVisualStyleBackColor = false;
+            this.btnApacheSettings.Click += new System.EventHandler(this.btnApacheSettings_Click);
             // 
             // lblApacheVer
             // 
@@ -183,9 +192,9 @@
             this.btnLogs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnLogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogs.ForeColor = System.Drawing.Color.White;
-            this.btnLogs.Location = new System.Drawing.Point(53, 80);
+            this.btnLogs.Location = new System.Drawing.Point(13, 80);
             this.btnLogs.Name = "btnLogs";
-            this.btnLogs.Size = new System.Drawing.Size(94, 41);
+            this.btnLogs.Size = new System.Drawing.Size(56, 41);
             this.btnLogs.TabIndex = 1;
             this.btnLogs.Text = "Logs";
             this.btnLogs.UseVisualStyleBackColor = false;
@@ -198,9 +207,9 @@
             this.btnApache.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnApache.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApache.ForeColor = System.Drawing.Color.White;
-            this.btnApache.Location = new System.Drawing.Point(153, 80);
+            this.btnApache.Location = new System.Drawing.Point(150, 80);
             this.btnApache.Name = "btnApache";
-            this.btnApache.Size = new System.Drawing.Size(94, 41);
+            this.btnApache.Size = new System.Drawing.Size(97, 41);
             this.btnApache.TabIndex = 1;
             this.btnApache.Text = "Start";
             this.btnApache.UseVisualStyleBackColor = false;
@@ -217,6 +226,16 @@
             this.lblApacheTitle.TabIndex = 0;
             this.lblApacheTitle.Text = "Apache";
             // 
+            // lblPHPVer
+            // 
+            this.lblPHPVer.AutoSize = true;
+            this.lblPHPVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPHPVer.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblPHPVer.Location = new System.Drawing.Point(69, 10);
+            this.lblPHPVer.Name = "lblPHPVer";
+            this.lblPHPVer.Size = new System.Drawing.Size(0, 20);
+            this.lblPHPVer.TabIndex = 4;
+            // 
             // pnlMySQL
             // 
             this.pnlMySQL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -224,7 +243,7 @@
             this.pnlMySQL.Controls.Add(this.lblMySQLStatus);
             this.pnlMySQL.Controls.Add(this.btnMySQL);
             this.pnlMySQL.Controls.Add(this.lblMySQLTitle);
-            this.pnlMySQL.Location = new System.Drawing.Point(289, 43);
+            this.pnlMySQL.Location = new System.Drawing.Point(12, 183);
             this.pnlMySQL.Name = "pnlMySQL";
             this.pnlMySQL.Size = new System.Drawing.Size(259, 134);
             this.pnlMySQL.TabIndex = 2;
@@ -308,7 +327,7 @@
             // 
             this.pnlMySQLConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.pnlMySQLConfig.Controls.Add(this.lblMySQLConfig);
-            this.pnlMySQLConfig.Location = new System.Drawing.Point(289, 76);
+            this.pnlMySQLConfig.Location = new System.Drawing.Point(12, 216);
             this.pnlMySQLConfig.Name = "pnlMySQLConfig";
             this.pnlMySQLConfig.Size = new System.Drawing.Size(259, 101);
             this.pnlMySQLConfig.TabIndex = 4;
@@ -326,27 +345,60 @@
             this.lblMySQLConfig.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMySQLConfig.Click += new System.EventHandler(this.MySQLLabelConfigClick);
             // 
-            // btnApacheSettings
+            // panel1
             // 
-            this.btnApacheSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.btnApacheSettings.FlatAppearance.BorderSize = 0;
-            this.btnApacheSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.btnApacheSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApacheSettings.ForeColor = System.Drawing.Color.White;
-            this.btnApacheSettings.Location = new System.Drawing.Point(153, 33);
-            this.btnApacheSettings.Name = "btnApacheSettings";
-            this.btnApacheSettings.Size = new System.Drawing.Size(94, 41);
-            this.btnApacheSettings.TabIndex = 5;
-            this.btnApacheSettings.Text = "Settings";
-            this.btnApacheSettings.UseVisualStyleBackColor = false;
-            this.btnApacheSettings.Click += new System.EventHandler(this.btnApacheSettings_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblPHPVer);
+            this.panel1.Controls.Add(this.btnPHPSettings);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(12, 326);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(259, 97);
+            this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(89, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.TabIndex = 4;
+            // 
+            // btnPHPSettings
+            // 
+            this.btnPHPSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnPHPSettings.FlatAppearance.BorderSize = 0;
+            this.btnPHPSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnPHPSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPHPSettings.ForeColor = System.Drawing.Color.White;
+            this.btnPHPSettings.Location = new System.Drawing.Point(152, 44);
+            this.btnPHPSettings.Name = "btnPHPSettings";
+            this.btnPHPSettings.Size = new System.Drawing.Size(94, 41);
+            this.btnPHPSettings.TabIndex = 2;
+            this.btnPHPSettings.Text = "Settings";
+            this.btnPHPSettings.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(8, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "PHP";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(562, 189);
+            this.ClientSize = new System.Drawing.Size(284, 436);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMySQL);
             this.Controls.Add(this.pnlTitlebar);
             this.Controls.Add(this.pnlApache);
@@ -366,6 +418,8 @@
             this.pnlMySQL.PerformLayout();
             this.pnlApacheConfig.ResumeLayout(false);
             this.pnlMySQLConfig.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,6 +449,10 @@
         private System.Windows.Forms.Label lblPHPVer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnApacheSettings;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPHPSettings;
+        private System.Windows.Forms.Label label3;
     }
 }
 

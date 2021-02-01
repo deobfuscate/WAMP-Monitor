@@ -40,7 +40,7 @@ namespace wampmon
             }
             if (File.Exists($"{Properties.Settings.Default.phpPath}\\php.exe")) { 
                 output = GetPHPVer();
-                lblPHPVer.Text = "PHP v" + output.Split(' ')[1];
+                lblPHPVer.Text = "v" + output.Split(' ')[1];
             }
         }
 
