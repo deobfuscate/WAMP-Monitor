@@ -22,7 +22,7 @@ namespace wampmon
         {
             InitializeComponent();
             DoubleBuffered = true;
-            SetStyle(ControlStyles.ResizeRedraw, true);
+            //SetStyle(ControlStyles.ResizeRedraw, true);
             this.configFile = configFile;
         }
 
@@ -55,7 +55,7 @@ namespace wampmon
             }
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        /*protected override void OnPaint(PaintEventArgs e)
         {
             Rectangle rc = new Rectangle(ClientSize.Width - GRIP_SIZE, ClientSize.Height - GRIP_SIZE, GRIP_SIZE, GRIP_SIZE);
             ControlPaint.DrawSizeGrip(e.Graphics, BackColor, rc);
@@ -75,7 +75,7 @@ namespace wampmon
                 }
             }
             base.WndProc(ref m);
-        }
+        }*/
 
         private void TitleLabelMouseMove(object sender, MouseEventArgs e)
         {
