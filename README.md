@@ -1,5 +1,5 @@
 # WAMP Monitor
-A tool to monitor a Windows Apache MySQL PHP stack
+A tool to monitor a Windows Apache MySQL PHP stack including status monitors and configuration editors
 
 ## Features
 * Custom GUI
