@@ -245,5 +245,15 @@ namespace wampmon
             var settings = new frmApacheSettings(Properties.Settings.Default.apachePath + "\\conf\\httpd.conf");
             settings.Show();
         }
+
+        private void btnFolder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWebView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -57,6 +57,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPHPSettings = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnFolder = new System.Windows.Forms.Button();
+            this.btnWebView = new System.Windows.Forms.Button();
             this.pnlTitlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlApache.SuspendLayout();
@@ -392,12 +394,44 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "PHP";
             // 
+            // btnFolder
+            // 
+            this.btnFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnFolder.FlatAppearance.BorderSize = 0;
+            this.btnFolder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFolder.ForeColor = System.Drawing.Color.White;
+            this.btnFolder.Location = new System.Drawing.Point(12, 432);
+            this.btnFolder.Name = "btnFolder";
+            this.btnFolder.Size = new System.Drawing.Size(127, 41);
+            this.btnFolder.TabIndex = 5;
+            this.btnFolder.Text = "Open in Explorer";
+            this.btnFolder.UseVisualStyleBackColor = false;
+            this.btnFolder.Click += new System.EventHandler(this.btnFolder_Click);
+            // 
+            // btnWebView
+            // 
+            this.btnWebView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnWebView.FlatAppearance.BorderSize = 0;
+            this.btnWebView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.btnWebView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWebView.ForeColor = System.Drawing.Color.White;
+            this.btnWebView.Location = new System.Drawing.Point(144, 432);
+            this.btnWebView.Name = "btnWebView";
+            this.btnWebView.Size = new System.Drawing.Size(127, 41);
+            this.btnWebView.TabIndex = 6;
+            this.btnWebView.Text = "Open in Browser";
+            this.btnWebView.UseVisualStyleBackColor = false;
+            this.btnWebView.Click += new System.EventHandler(this.btnWebView_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(284, 436);
+            this.ClientSize = new System.Drawing.Size(284, 486);
+            this.Controls.Add(this.btnWebView);
+            this.Controls.Add(this.btnFolder);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlMySQL);
             this.Controls.Add(this.pnlTitlebar);
@@ -453,6 +487,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPHPSettings;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnFolder;
+        private System.Windows.Forms.Button btnWebView;
     }
 }
 
