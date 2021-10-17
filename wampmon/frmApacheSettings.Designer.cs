@@ -59,7 +59,7 @@
             this.pnlTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitlebar.Location = new System.Drawing.Point(0, 0);
             this.pnlTitlebar.Name = "pnlTitlebar";
-            this.pnlTitlebar.Size = new System.Drawing.Size(400, 31);
+            this.pnlTitlebar.Size = new System.Drawing.Size(324, 31);
             this.pnlTitlebar.TabIndex = 2;
             this.pnlTitlebar.DoubleClick += new System.EventHandler(this.TitleDoubleClick);
             this.pnlTitlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TitleMouseMove);
@@ -115,7 +115,7 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(14, 214);
+            this.btnSave.Location = new System.Drawing.Point(116, 213);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 36);
             this.btnSave.TabIndex = 4;
@@ -130,7 +130,7 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(114, 214);
+            this.button1.Location = new System.Drawing.Point(216, 213);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 36);
             this.button1.TabIndex = 4;
@@ -275,7 +275,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(400, 261);
+            this.ClientSize = new System.Drawing.Size(324, 261);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtErrorLog);
             this.Controls.Add(this.label5);

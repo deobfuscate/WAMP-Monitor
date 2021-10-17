@@ -101,8 +101,8 @@ namespace wampmon
                 proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
                 proc.StartInfo.FileName = apacheExe;
             }
-            else // mysql
-            {
+            else
+            { // mysql
                 proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.mysqlPath}\\bin";
                 proc.StartInfo.FileName = mysqlExe;
             }
