@@ -255,5 +255,10 @@ namespace wampmon
         {
             Process.Start("http://localhost/");
         }
+
+        private void btnPHPSettings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

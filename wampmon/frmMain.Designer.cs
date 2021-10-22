@@ -382,6 +382,7 @@
             this.btnPHPSettings.TabIndex = 2;
             this.btnPHPSettings.Text = "Settings";
             this.btnPHPSettings.UseVisualStyleBackColor = false;
+            this.btnPHPSettings.Click += new System.EventHandler(this.btnPHPSettings_Click);
             // 
             // label3
             // 
