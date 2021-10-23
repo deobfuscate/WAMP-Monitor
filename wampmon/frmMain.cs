@@ -157,10 +157,14 @@ namespace wampmon
                 svcLabel.Text = "Offline";
                 svcButton.Text = "Start";
             }
-            if (IsRunning("httpd"))
+            if (IsRunning("httpd")) { 
                 btnLogs.Enabled = false;
-            else
+                btnApacheSettings.Enabled = false;
+            }
+            else { 
                 btnLogs.Enabled = true;
+                btnApacheSettings.Enabled = true;
+            }
         }
 
         private void CheckServices()
