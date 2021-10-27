@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPHPSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPHPSettings.Designer.cs">
+      <DependentUpon>frmPHPSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmApacheSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmPHPSettings.resx">
+      <DependentUpon>frmPHPSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmApacheSettings.resx">
       <DependentUpon>frmApacheSettings.cs</DependentUpon>
     </EmbeddedResource>
