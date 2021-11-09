@@ -98,7 +98,6 @@ namespace wampmon
             txtServerName.Text = ReadSetting(configFile, "ServerName");
             txtServerAdmin.Text = ReadSetting(configFile, "ServerAdmin");
             txtPort.Text = ReadSetting(configFile, "Listen");
-            txtErrorLog.Text = ReadSetting(configFile, "ErrorLog");
             txtLogLevel.Text = ReadSetting(configFile, "LogLevel");
         }
 
