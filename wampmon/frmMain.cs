@@ -16,6 +16,18 @@ namespace wampmon
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            try
+            {
+                if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
+                    DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            }
+            catch { return; }
+        }
 
         public frmMain()
         {
@@ -38,6 +50,7 @@ namespace wampmon
                 lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
             }
+            Console.WriteLine(Properties.Settings.Default.mysqlPath);
             if (File.Exists($"{Properties.Settings.Default.phpPath}\\php.exe")) { 
                 output = GetPHPVer();
                 lblPHPVer.Text = "v" + output.Split(' ')[1];
@@ -84,6 +97,7 @@ namespace wampmon
             proc.Start();
             string output = proc.StandardOutput.ReadToEnd();
             proc.WaitForExit();
+            Console.WriteLine($"{Properties.Settings.Default.phpPath}\\php.exe");
             return output;
         }
 
