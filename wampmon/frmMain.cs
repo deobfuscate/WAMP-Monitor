@@ -224,9 +224,16 @@ namespace wampmon
             folderBrowser.Description = "Choose Apache directory.\nUsually C:\\Program Files\\Apache";
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.apachePath = folderBrowser.SelectedPath;
-                Properties.Settings.Default.Save();
-                pnlApacheConfig.Hide();
+                if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
+                {
+                    Properties.Settings.Default.apachePath = folderBrowser.SelectedPath;
+                    Properties.Settings.Default.Save();
+                    pnlApacheConfig.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Could not find httpd.exe.");
+                }
             }
         }
 
