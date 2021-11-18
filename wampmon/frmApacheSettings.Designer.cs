@@ -227,7 +227,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPort);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 250);
