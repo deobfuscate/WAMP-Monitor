@@ -4,7 +4,7 @@ A tool to monitor a Windows Apache MySQL PHP stack including status monitors and
 ## Features
 * Custom GUI
 * Online status notification
-* Apache/MySQL version information
+* Apache/MySQL/PHP version information
 * View and purge Apache access logs
 * Customize Apache/MySQL/PHP configuration files
 * View and purge Apache error logs
