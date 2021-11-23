@@ -16,8 +16,21 @@ namespace wampmon
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+
         private string apacheLogFile;
-        
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            try
+            {
+                if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
+                    DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            }
+            catch { return; }
+        }
+
         public frmLogs(string logFile)
         {
             InitializeComponent();
@@ -101,8 +114,6 @@ namespace wampmon
             txtLogs.Height = Height - btnClearLogs.Height - 50;
             btnClearLogs.Top = Height - 44;
             button1.Top = Height - 44;
-            btnCloseWindow.Left = Width - btnCloseWindow.Width;
-            btnMinimize.Left = Width - btnCloseWindow.Width - btnMinimize.Width;
         }
     }
 }
