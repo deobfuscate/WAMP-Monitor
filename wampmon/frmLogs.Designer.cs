@@ -33,7 +33,9 @@
             this.btnClearLogs = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLogs
@@ -42,12 +44,12 @@
             this.txtLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLogs.ForeColor = System.Drawing.Color.White;
-            this.txtLogs.Location = new System.Drawing.Point(0, 0);
+            this.txtLogs.Location = new System.Drawing.Point(5, 0);
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ReadOnly = true;
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(562, 289);
+            this.txtLogs.Size = new System.Drawing.Size(552, 289);
             this.txtLogs.TabIndex = 3;
             // 
             // btnClearLogs
@@ -90,13 +92,23 @@
             this.panel1.Size = new System.Drawing.Size(562, 59);
             this.panel1.TabIndex = 5;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtLogs);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panel2.Size = new System.Drawing.Size(562, 289);
+            this.panel2.TabIndex = 6;
+            // 
             // frmLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 348);
-            this.Controls.Add(this.txtLogs);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(300, 250);
@@ -104,8 +116,9 @@
             this.Text = "WAMP Monitor - Access logs";
             this.Load += new System.EventHandler(this.frmLogs_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button btnClearLogs;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
