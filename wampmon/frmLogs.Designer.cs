@@ -44,12 +44,12 @@
             this.txtLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLogs.ForeColor = System.Drawing.Color.White;
-            this.txtLogs.Location = new System.Drawing.Point(5, 0);
+            this.txtLogs.Location = new System.Drawing.Point(5, 5);
             this.txtLogs.Multiline = true;
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.ReadOnly = true;
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(552, 289);
+            this.txtLogs.Size = new System.Drawing.Size(552, 284);
             this.txtLogs.TabIndex = 3;
             // 
             // btnClearLogs
@@ -98,7 +98,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.panel2.Size = new System.Drawing.Size(562, 289);
             this.panel2.TabIndex = 6;
             // 
