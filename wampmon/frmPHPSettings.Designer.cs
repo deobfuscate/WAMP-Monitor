@@ -73,6 +73,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPort
             // 
@@ -210,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.ClientSize = new System.Drawing.Size(324, 250);
+            this.ClientSize = new System.Drawing.Size(324, 232);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -230,7 +231,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 250);
             this.Name = "frmPHPSettings";
-            this.Text = "WAMP Monitor - PHP Settings";
+            this.Text = "PHP Settings - WAMP Monitor";
             this.Load += new System.EventHandler(this.frmLogs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

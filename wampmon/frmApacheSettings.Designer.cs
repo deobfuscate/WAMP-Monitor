@@ -232,7 +232,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(300, 250);
             this.Name = "frmApacheSettings";
-            this.Text = "WAMP Monitor - Apache Settings";
+            this.Text = "Apache Settings - WAMP Monitor";
             this.Load += new System.EventHandler(this.frmLogs_Load);
             this.Resize += new System.EventHandler(this.ResizeLogWindow);
             this.ResumeLayout(false);
