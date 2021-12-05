@@ -105,7 +105,18 @@ namespace wampmon
         {
             string apacheExe = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
             string mysqlExe = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysqld.exe";
-            if (!File.Exists(apacheExe) || !File.Exists(mysqlExe)) return;
+            if (!File.Exists(apacheExe))
+            {
+                ApacheConfigClick(null, null);
+                return;
+            }
+
+            if (!File.Exists(mysqlExe))
+            {
+                MySQLConfigClick(null, null);
+                return;
+            }
+
             Process proc = new Process();
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.RedirectStandardOutput = true;
