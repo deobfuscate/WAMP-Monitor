@@ -33,11 +33,11 @@
             this.btnClearLogs = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLogs
@@ -97,16 +97,6 @@
             this.panel1.Size = new System.Drawing.Size(562, 59);
             this.panel1.TabIndex = 5;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtLogs);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.panel2.Size = new System.Drawing.Size(562, 289);
-            this.panel2.TabIndex = 6;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button1);
@@ -116,6 +106,16 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.panel3.Size = new System.Drawing.Size(453, 39);
             this.panel3.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtLogs);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.panel2.Size = new System.Drawing.Size(562, 289);
+            this.panel2.TabIndex = 6;
             // 
             // frmLogs
             // 
@@ -131,9 +131,9 @@
             this.Text = "Apache Access Logs - WAMP Monitor";
             this.Load += new System.EventHandler(this.frmLogs_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
