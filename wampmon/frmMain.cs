@@ -198,37 +198,6 @@ namespace wampmon
             CheckService("mysqld", lblMySQLStatus, btnMySQL);
         }
 
-        private void TitleDoubleClick(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                WindowState = FormWindowState.Maximized;
-            else WindowState = FormWindowState.Normal;
-        }
-
-        private void TitleMouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
-
-        private void TitleLabelMouseMove(object sender, MouseEventArgs e)
-        {
-            TitleMouseMove(sender, e);
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         private void ApacheConfigClick(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
