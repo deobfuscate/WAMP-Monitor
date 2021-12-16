@@ -59,44 +59,44 @@ namespace wampmon
 
         private static string GetApacheVer()
         {
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.Arguments = "-v";
-            proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
-            proc.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
-            proc.Start();
-            string output = proc.StandardOutput.ReadToEnd();
-            proc.WaitForExit();
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = "-v";
+            p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
+            p.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
             return output;
         }
 
         private static string GetMySQLVer()
         {
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.Arguments = "-V";
-            proc.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
-            proc.Start();
-            string output = proc.StandardOutput.ReadToEnd();
-            proc.WaitForExit();
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = "-V";
+            p.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
             return output;
         }
 
         private static string GetPHPVer()
         {
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.CreateNoWindow = true;
-            proc.StartInfo.Arguments = "-v";
-            proc.StartInfo.FileName = $"{Properties.Settings.Default.phpPath}\\php.exe";
-            proc.Start();
-            string output = proc.StandardOutput.ReadToEnd();
-            proc.WaitForExit();
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = "-v";
+            p.StartInfo.FileName = $"{Properties.Settings.Default.phpPath}\\php.exe";
+            p.Start();
+            string output = p.StandardOutput.ReadToEnd();
+            p.WaitForExit();
             Console.WriteLine($"{Properties.Settings.Default.phpPath}\\php.exe");
             return output;
         }
@@ -117,21 +117,21 @@ namespace wampmon
                 return;
             }
 
-            Process proc = new Process();
-            proc.StartInfo.UseShellExecute = false;
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.CreateNoWindow = true;
+            Process p = new Process();
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.CreateNoWindow = true;
             if (svc == "httpd.exe")
             { // apache
-                proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
-                proc.StartInfo.FileName = apacheExe;
+                p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
+                p.StartInfo.FileName = apacheExe;
             }
             else
             { // mysql
-                proc.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.mysqlPath}\\bin";
-                proc.StartInfo.FileName = mysqlExe;
+                p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.mysqlPath}\\bin";
+                p.StartInfo.FileName = mysqlExe;
             }
-            proc.Start();
+            p.Start();
             CheckServices();
         }
 
