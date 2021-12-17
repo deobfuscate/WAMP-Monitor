@@ -48,6 +48,20 @@ namespace wampmon
             return null;
         }
 
+        private bool SaveSetting(string filename, string setting, string value)
+        {
+            string line;
+            StreamReader file = new StreamReader(filename);
+            while ((line = file.ReadLine()) != null)
+            {
+                if (line == "" || line[0] == '#') continue;
+                var split = line.Split(' ');
+                if (split[0] == setting)
+                    //return split[1];
+            }
+            return false;
+        }
+
         private void frmLogs_Load(object sender, EventArgs e)
         {
             txtDocRoot.Text = ReadSetting(configFile, "DocumentRoot");
