@@ -57,7 +57,7 @@ namespace wampmon
                 if (line == "" || line[0] == '#') continue;
                 var split = line.Split(' ');
                 if (split[0] == setting)
-                    //return split[1];
+                    ;
             }
             return false;
         }
@@ -87,7 +87,7 @@ namespace wampmon
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }

@@ -241,7 +241,14 @@ namespace wampmon
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            var logsWindow = new frmLogs(Properties.Settings.Default.apachePath + "\\logs\\access.log");
+            string logFile = Properties.Settings.Default.apachePath + "\\logs\\access.log";
+
+            if (!File.Exists(logFile))
+            {
+                MessageBox.Show("Eroor. Could not find Apache log file.");
+                return;
+            }
+            var logsWindow = new frmLogs(logFile);
             logsWindow.Show();
         }
 

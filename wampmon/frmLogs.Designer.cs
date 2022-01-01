@@ -45,6 +45,7 @@
             this.txtLogs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtLogs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogs.ForeColor = System.Drawing.Color.White;
             this.txtLogs.Location = new System.Drawing.Point(5, 5);
             this.txtLogs.Multiline = true;
