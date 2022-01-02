@@ -43,7 +43,15 @@ namespace wampmon
 
         private void btnClearLogs_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(apacheLogFile, "");
+            try
+            {
+                File.WriteAllText(apacheLogFile, "");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, could not write to Apache log file.");
+                return;
+            }
             txtLogs.Text = File.ReadAllText(apacheLogFile);
         }
 
