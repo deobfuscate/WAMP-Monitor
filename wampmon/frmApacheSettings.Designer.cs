@@ -234,7 +234,6 @@
             this.Name = "frmApacheSettings";
             this.Text = "Apache Settings - WAMP Monitor";
             this.Load += new System.EventHandler(this.frmLogs_Load);
-            this.Resize += new System.EventHandler(this.ResizeLogWindow);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -77,14 +77,6 @@ namespace wampmon
             Close();
         }
 
-        private void ResizeLogWindow(object sender, EventArgs e)
-        {
-            btnSave.Top = Height - 44;
-            button1.Top = Height - 44;
-            //btnCloseWindow.Left = Width - btnCloseWindow.Width;
-            //btnMinimize.Left = Width - btnCloseWindow.Width - btnMinimize.Width;
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             //
