@@ -254,7 +254,13 @@ namespace wampmon
 
         private void btnApacheSettings_Click(object sender, EventArgs e)
         {
-            var settings = new frmApacheSettings(Properties.Settings.Default.apachePath + "\\conf\\httpd.conf");
+            string configFile = Properties.Settings.Default.apachePath + "\\conf\\httpd.conf";
+            if (!File.Exists(configFile))
+            {
+                MessageBox.Show("Eroor. Could not find Apache config file. (httpd.conf)");
+                return;
+            }
+            var settings = new frmApacheSettings(configFile);
             settings.Show();
         }
 
