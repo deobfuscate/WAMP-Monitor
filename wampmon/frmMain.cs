@@ -266,7 +266,8 @@ namespace wampmon
 
         private void btnFolder_Click(object sender, EventArgs e)
         {
-            Process.Start(Properties.Settings.Default.apachePath+"\\htdocs");
+            if (Directory.Exists(Properties.Settings.Default.apachePath + "\\htdocs"))
+                Process.Start(Properties.Settings.Default.apachePath + "\\htdocs");
         }
 
         private void btnWebView_Click(object sender, EventArgs e)
