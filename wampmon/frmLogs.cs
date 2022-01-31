@@ -15,7 +15,7 @@ namespace wampmon
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
 
-        private string apacheLogFile;
+        private readonly string apacheLogFile;
 
         protected override void OnHandleCreated(EventArgs e)
         {

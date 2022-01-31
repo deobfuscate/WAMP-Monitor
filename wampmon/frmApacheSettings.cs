@@ -30,7 +30,6 @@ namespace wampmon
         {
             InitializeComponent();
             DoubleBuffered = true;
-            //SetStyle(ControlStyles.ResizeRedraw, true);
             this.configFile = configFile;
         }
 

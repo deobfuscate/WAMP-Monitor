@@ -9,9 +9,6 @@ namespace wampmon
 {
     public partial class frmMain : Form
     {
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-
         [DllImport("user32.dll")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
@@ -97,7 +94,6 @@ namespace wampmon
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
-            Console.WriteLine($"{Properties.Settings.Default.phpPath}\\php.exe");
             return output;
         }
 
@@ -200,8 +196,10 @@ namespace wampmon
 
         private void ApacheConfigClick(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            folderBrowser.Description = "Choose Apache directory.\nUsually C:\\Program Files\\Apache";
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog
+            {
+                Description = "Choose Apache directory.\nUsually C:\\Program Files\\Apache"
+            };
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
@@ -224,8 +222,10 @@ namespace wampmon
 
         private void MySQLConfigClick(object sender, EventArgs e)
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            folderBrowser.Description = "Choose MySQL directory.\nUsually C:\\Program Files\\MySQL";
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog
+            {
+                Description = "Choose MySQL directory.\nUsually C:\\Program Files\\MySQL"
+            };
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.mysqlPath = folderBrowser.SelectedPath;
@@ -245,7 +245,7 @@ namespace wampmon
 
             if (!File.Exists(logFile))
             {
-                MessageBox.Show("Eroor. Could not find Apache log file.");
+                MessageBox.Show("Error. Could not find Apache log file.");
                 return;
             }
             var logsWindow = new frmLogs(logFile);
@@ -257,7 +257,7 @@ namespace wampmon
             string configFile = Properties.Settings.Default.apachePath + "\\conf\\httpd.conf";
             if (!File.Exists(configFile))
             {
-                MessageBox.Show("Eroor. Could not find Apache config file. (httpd.conf)");
+                MessageBox.Show("Error. Could not find Apache config file. (httpd.conf)");
                 return;
             }
             var settings = new frmApacheSettings(configFile);
@@ -272,7 +272,7 @@ namespace wampmon
 
         private void btnWebView_Click(object sender, EventArgs e)
         {
-            Process.Start("http://localhost/");
+            Process.Start("http://localhost");
         }
 
         private void btnPHPSettings_Click(object sender, EventArgs e)
