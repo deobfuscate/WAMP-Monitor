@@ -4,6 +4,8 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Web.Script.Serialization;
+
 
 namespace wampmon
 {
@@ -15,6 +17,8 @@ namespace wampmon
         private static extern bool ReleaseCapture();
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
+        private Settings settings;
+        private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.cfg";
 
         protected override void OnHandleCreated(EventArgs e)
         {
@@ -35,62 +39,67 @@ namespace wampmon
             pnlApacheConfig.BringToFront();
             pnlMySQLConfig.BringToFront();
             string output;
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.apachePath))
+            settings = new Settings();
+            var a = File.ReadAllText(settingsPath);
+            var b = new JavaScriptSerializer();
+            settings = b.Deserialize<Settings>(a);
+
+            if (!string.IsNullOrEmpty(settings.apachePath))
             {
                 output = GetApacheVer();
                 lblApacheVer.Text = "v" + output.Split(' ')[2].Split('/')[1];
                 pnlApacheConfig.Hide();
             }
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.mysqlPath))
+            if (!string.IsNullOrEmpty(settings.mysqlPath))
             {
                 output = GetMySQLVer();
                 lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
             }
-            Console.WriteLine(Properties.Settings.Default.mysqlPath);
-            if (File.Exists($"{Properties.Settings.Default.phpPath}\\php.exe")) { 
+            Console.WriteLine(settings.mysqlPath);
+            if (File.Exists($"{settings.phpPath}\\php.exe")) { 
                 output = GetPHPVer();
                 lblPHPVer.Text = "v" + output.Split(' ')[1];
             }
         }
 
-        private static string GetApacheVer()
+        private string GetApacheVer()
         {
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.Arguments = "-v";
-            p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
-            p.StartInfo.FileName = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
+            p.StartInfo.WorkingDirectory = $"{settings.apachePath}\\bin";
+            p.StartInfo.FileName = $"{settings.apachePath}\\bin\\httpd.exe";
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
             return output;
         }
 
-        private static string GetMySQLVer()
+        private string GetMySQLVer()
         {
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.Arguments = "-V";
-            p.StartInfo.FileName = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysql.exe";
+            p.StartInfo.FileName = $"{settings.mysqlPath}\\bin\\mysql.exe";
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
             return output;
         }
 
-        private static string GetPHPVer()
+        private string GetPHPVer()
         {
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
             p.StartInfo.Arguments = "-v";
-            p.StartInfo.FileName = $"{Properties.Settings.Default.phpPath}\\php.exe";
+            p.StartInfo.FileName = $"{settings.phpPath}\\php.exe";
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
@@ -99,8 +108,8 @@ namespace wampmon
 
         private void StartService(string svc)
         {
-            string apacheExe = $"{Properties.Settings.Default.apachePath}\\bin\\httpd.exe";
-            string mysqlExe = $"{Properties.Settings.Default.mysqlPath}\\bin\\mysqld.exe";
+            string apacheExe = $"{settings.apachePath}\\bin\\httpd.exe";
+            string mysqlExe = $"{settings.mysqlPath}\\bin\\mysqld.exe";
             if (!File.Exists(apacheExe))
             {
                 ApacheConfigClick(null, null);
@@ -119,12 +128,12 @@ namespace wampmon
             p.StartInfo.CreateNoWindow = true;
             if (svc == "httpd.exe")
             { // apache
-                p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.apachePath}\\bin";
+                p.StartInfo.WorkingDirectory = $"{settings.apachePath}\\bin";
                 p.StartInfo.FileName = apacheExe;
             }
             else
             { // mysql
-                p.StartInfo.WorkingDirectory = $"{Properties.Settings.Default.mysqlPath}\\bin";
+                p.StartInfo.WorkingDirectory = $"{settings.mysqlPath}\\bin";
                 p.StartInfo.FileName = mysqlExe;
             }
             p.Start();
@@ -204,8 +213,13 @@ namespace wampmon
             {
                 if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
                 {
-                    Properties.Settings.Default.apachePath = folderBrowser.SelectedPath;
-                    Properties.Settings.Default.Save();
+                    settings.apachePath = folderBrowser.SelectedPath;
+                    var serializer = new JavaScriptSerializer();
+                    var settingsJson = serializer.Serialize(settings);
+#if DEBUG
+                    Console.WriteLine(settingsJson);
+#endif
+                    File.WriteAllText(settingsPath, settingsJson);
                     pnlApacheConfig.Hide();
                 }
                 else
@@ -228,8 +242,13 @@ namespace wampmon
             };
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.mysqlPath = folderBrowser.SelectedPath;
-                Properties.Settings.Default.Save();
+                settings.mysqlPath = folderBrowser.SelectedPath;
+                var serializer = new JavaScriptSerializer();
+                var settingsJson = serializer.Serialize(settings);
+#if DEBUG
+                Console.WriteLine(settingsJson);
+#endif
+                File.WriteAllText(settingsPath, settingsJson);
                 pnlMySQLConfig.Hide();
             }
         }
@@ -241,7 +260,7 @@ namespace wampmon
 
         private void btnLogs_Click(object sender, EventArgs e)
         {
-            string logFile = Properties.Settings.Default.apachePath + "\\logs\\access.log";
+            string logFile = settings.apachePath + "\\logs\\access.log";
 
             if (!File.Exists(logFile))
             {
@@ -254,20 +273,20 @@ namespace wampmon
 
         private void btnApacheSettings_Click(object sender, EventArgs e)
         {
-            string configFile = Properties.Settings.Default.apachePath + "\\conf\\httpd.conf";
+            string configFile = settings.apachePath + "\\conf\\httpd.conf";
             if (!File.Exists(configFile))
             {
                 MessageBox.Show("Error. Could not find Apache config file. (httpd.conf)");
                 return;
             }
-            var settings = new frmApacheSettings(configFile);
-            settings.Show();
+            var apacheSettings = new frmApacheSettings(configFile);
+            apacheSettings.Show();
         }
 
         private void btnFolder_Click(object sender, EventArgs e)
         {
-            if (Directory.Exists(Properties.Settings.Default.apachePath + "\\htdocs"))
-                Process.Start(Properties.Settings.Default.apachePath + "\\htdocs");
+            if (Directory.Exists(settings.apachePath + "\\htdocs"))
+                Process.Start(settings.apachePath + "\\htdocs");
         }
 
         private void btnWebView_Click(object sender, EventArgs e)
@@ -277,8 +296,15 @@ namespace wampmon
 
         private void btnPHPSettings_Click(object sender, EventArgs e)
         {
-            var settings = new frmPHPSettings(Properties.Settings.Default.phpPath + "\\php.ini");
-            settings.Show();
+            var phpSettings = new frmPHPSettings(settings.phpPath + "\\php.ini");
+            phpSettings.Show();
         }
+    }
+
+    public class Settings
+    {
+        public string apachePath { get; set; }
+        public string phpPath { get; set; }
+        public string mysqlPath { get; set; }
     }
 }
