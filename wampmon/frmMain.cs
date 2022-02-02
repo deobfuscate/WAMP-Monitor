@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 
-
 namespace wampmon
 {
     public partial class frmMain : Form
