@@ -39,9 +39,11 @@ namespace wampmon
             pnlMySQLConfig.BringToFront();
             string output;
             settings = new Settings();
-            var a = File.ReadAllText(settingsPath);
-            var b = new JavaScriptSerializer();
-            settings = b.Deserialize<Settings>(a);
+            if (File.Exists(settingsPath)) {
+                var a = File.ReadAllText(settingsPath);
+                var b = new JavaScriptSerializer();
+                settings = b.Deserialize<Settings>(a);
+            }
 
             if (!string.IsNullOrEmpty(settings.apachePath))
             {
