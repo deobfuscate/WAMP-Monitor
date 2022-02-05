@@ -212,12 +212,7 @@ namespace wampmon
                 if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
                 {
                     settings.apachePath = folderBrowser.SelectedPath;
-                    var serializer = new JavaScriptSerializer();
-                    var settingsJson = serializer.Serialize(settings);
-#if DEBUG
-                    Console.WriteLine(settingsJson);
-#endif
-                    File.WriteAllText(settingsPath, settingsJson);
+                    SaveSettings();
                     pnlApacheConfig.Hide();
                 }
                 else
@@ -241,12 +236,7 @@ namespace wampmon
             if (folderBrowser.ShowDialog() == DialogResult.OK)
             {
                 settings.mysqlPath = folderBrowser.SelectedPath;
-                var serializer = new JavaScriptSerializer();
-                var settingsJson = serializer.Serialize(settings);
-#if DEBUG
-                Console.WriteLine(settingsJson);
-#endif
-                File.WriteAllText(settingsPath, settingsJson);
+                SaveSettings();
                 pnlMySQLConfig.Hide();
             }
         }
@@ -296,6 +286,16 @@ namespace wampmon
         {
             var phpSettings = new frmPHPSettings(settings.phpPath + "\\php.ini");
             phpSettings.Show();
+        }
+
+        private void SaveSettings()
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            var settingsJson = serializer.Serialize(settings);
+            #if DEBUG
+                Console.WriteLine(settingsJson);
+            #endif
+            File.WriteAllText(settingsPath, settingsJson);
         }
     }
 
