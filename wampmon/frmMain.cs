@@ -54,7 +54,6 @@ namespace wampmon
                 lblMySQLVer.Text = "v" + output.Split(' ')[3];
                 pnlMySQLConfig.Hide();
             }
-            Console.WriteLine(settings.mysqlPath);
             if (File.Exists($"{settings.phpPath}\\php.exe")) { 
                 output = GetPHPVer();
                 lblPHPVer.Text = "v" + output.Split(' ')[1];
