@@ -32,8 +32,6 @@ namespace wampmon
         public frmMain()
         {
             InitializeComponent();
-            DoubleBuffered = true;
-            SetStyle(ControlStyles.ResizeRedraw, true);
             CheckServices();
             pnlApacheConfig.BringToFront();
             pnlMySQLConfig.BringToFront();
