@@ -49,15 +49,21 @@ namespace wampmon
 
         private bool SaveSetting(string filename, string setting, string value)
         {
-            string line;
-            StreamReader file = new StreamReader(filename);
-            while ((line = file.ReadLine()) != null)
+            string text = "";
+            using (StreamReader sr = new StreamReader(filename))
             {
-                if (line == "" || line[0] == '#') continue;
-                var split = line.Split(' ');
-                if (split[0] == setting)
-                    ;
+                do
+                {
+                    string line = sr.ReadLine();
+                    var split = line.Split(' ');
+                    if (line != "" && split[0] == setting)
+                    {
+                        line = line.Replace(split[1], value);
+                        text += line + Environment.NewLine;
+                    }
+                } while (!sr.EndOfStream);
             }
+            //File.WriteAllText(filename, text);
             return false;
         }
 
