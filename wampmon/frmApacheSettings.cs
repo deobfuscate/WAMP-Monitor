@@ -56,15 +56,23 @@ namespace wampmon
                 {
                     string line = sr.ReadLine();
                     var split = line.Split(' ');
-                    if (line != "" && split[0] == setting)
-                    {
+                    if (line != "" && line[0] != '#' && split[0] == setting)
                         line = line.Replace(split[1], value);
-                        text += line + Environment.NewLine;
-                    }
+                    text += line + Environment.NewLine;
                 } while (!sr.EndOfStream);
             }
-            //File.WriteAllText(filename, text);
-            return false;
+            text = text.TrimEnd('\r', '\n');
+            if (text == "")
+                return false;
+            try
+            {
+                File.WriteAllText(filename, text);
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
         }
 
         private void frmLogs_Load(object sender, EventArgs e)
@@ -84,7 +92,13 @@ namespace wampmon
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //
+            SaveSetting(configFile, "DocumentRoot", txtDocRoot.Text);
+            SaveSetting(configFile, "ServerName", txtServerName.Text);
+            SaveSetting(configFile, "ServerAdmin", txtServerAdmin.Text);
+            SaveSetting(configFile, "Listen", txtPort.Text);
+            SaveSetting(configFile, "ErrorLog", txtErrorLog.Text);
+            SaveSetting(configFile, "LogLevel", txtLogLevel.Text);
+            MessageBox.Show("done");
         }
     }
 }
