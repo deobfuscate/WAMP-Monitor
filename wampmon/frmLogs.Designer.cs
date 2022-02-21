@@ -53,7 +53,7 @@
             this.txtLogs.ReadOnly = true;
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLogs.Size = new System.Drawing.Size(552, 284);
-            this.txtLogs.TabIndex = 3;
+            this.txtLogs.TabIndex = 1;
             // 
             // btnClearLogs
             // 
@@ -66,7 +66,7 @@
             this.btnClearLogs.Location = new System.Drawing.Point(10, 10);
             this.btnClearLogs.Name = "btnClearLogs";
             this.btnClearLogs.Size = new System.Drawing.Size(94, 39);
-            this.btnClearLogs.TabIndex = 4;
+            this.btnClearLogs.TabIndex = 2;
             this.btnClearLogs.Text = "Clear Logs";
             this.btnClearLogs.UseVisualStyleBackColor = false;
             this.btnClearLogs.Click += new System.EventHandler(this.btnClearLogs_Click);
@@ -82,7 +82,7 @@
             this.button1.Location = new System.Drawing.Point(10, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 39);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnCloseWindow_Click);

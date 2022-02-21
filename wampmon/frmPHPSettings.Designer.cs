@@ -55,7 +55,7 @@
             this.btnSave.Location = new System.Drawing.Point(12, 184);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 36);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -70,7 +70,7 @@
             this.button1.Location = new System.Drawing.Point(112, 184);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 36);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -85,7 +85,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtPort.Size = new System.Drawing.Size(61, 22);
-            this.txtPort.TabIndex = 3;
+            this.txtPort.TabIndex = 4;
             // 
             // label1
             // 
@@ -117,7 +117,7 @@
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtServerName.Size = new System.Drawing.Size(207, 22);
-            this.txtServerName.TabIndex = 6;
+            this.txtServerName.TabIndex = 2;
             // 
             // label3
             // 
@@ -139,7 +139,7 @@
             this.txtServerAdmin.Name = "txtServerAdmin";
             this.txtServerAdmin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtServerAdmin.Size = new System.Drawing.Size(207, 22);
-            this.txtServerAdmin.TabIndex = 8;
+            this.txtServerAdmin.TabIndex = 3;
             // 
             // label4
             // 
@@ -161,7 +161,7 @@
             this.txtLogLevel.Name = "txtLogLevel";
             this.txtLogLevel.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtLogLevel.Size = new System.Drawing.Size(207, 22);
-            this.txtLogLevel.TabIndex = 10;
+            this.txtLogLevel.TabIndex = 6;
             // 
             // label5
             // 
@@ -183,7 +183,7 @@
             this.txtDocRoot.Name = "txtDocRoot";
             this.txtDocRoot.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDocRoot.Size = new System.Drawing.Size(207, 22);
-            this.txtDocRoot.TabIndex = 12;
+            this.txtDocRoot.TabIndex = 1;
             // 
             // label6
             // 
@@ -204,7 +204,7 @@
             this.comboBox1.Location = new System.Drawing.Point(106, 123);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 16;
+            this.comboBox1.TabIndex = 5;
             // 
             // frmPHPSettings
             // 
