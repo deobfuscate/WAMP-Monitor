@@ -93,9 +93,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Max Input Time";
+            this.label1.Text = "Max Input Time:";
             // 
             // label2
             // 
@@ -103,9 +103,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(28, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Float Precision";
+            this.label2.Text = "Float Precision:";
             // 
             // txtServerName
             // 
@@ -125,9 +125,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.Size = new System.Drawing.Size(106, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Max Execution Time";
+            this.label3.Text = "Max Execution Time:";
             // 
             // txtServerAdmin
             // 
@@ -147,9 +147,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(25, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Error Reporting";
+            this.label4.Text = "Error Reporting:";
             // 
             // txtLogLevel
             // 
@@ -191,9 +191,9 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(35, 125);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Memory Limit";
+            this.label6.Text = "Memory Limit:";
             // 
             // comboBox1
             // 
