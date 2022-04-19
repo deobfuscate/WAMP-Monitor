@@ -204,18 +204,16 @@ namespace wampmon
             {
                 Description = "Choose Apache directory.\nUsually C:\\Program Files\\Apache"
             };
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+            if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
             {
-                if (File.Exists(folderBrowser.SelectedPath + "\\bin\\httpd.exe"))
-                {
-                    settings.apachePath = folderBrowser.SelectedPath;
-                    SaveSettings();
-                    pnlApacheConfig.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Could not find httpd.exe.");
-                }
+                settings.apachePath = folderBrowser.SelectedPath;
+                SaveSettings();
+                pnlApacheConfig.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Could not find httpd.exe.");
             }
         }
 
@@ -230,12 +228,10 @@ namespace wampmon
             {
                 Description = "Choose MySQL directory.\nUsually C:\\Program Files\\MySQL"
             };
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
-            {
-                settings.mysqlPath = folderBrowser.SelectedPath;
-                SaveSettings();
-                pnlMySQLConfig.Hide();
-            }
+            if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+            settings.mysqlPath = folderBrowser.SelectedPath;
+            SaveSettings();
+            pnlMySQLConfig.Hide();
         }
 
         private void MySQLLabelConfigClick(object sender, EventArgs e)
