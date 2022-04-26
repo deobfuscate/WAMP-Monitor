@@ -98,7 +98,6 @@ namespace wampmon
             SaveSetting(configFile, "Listen", txtPort.Text);
             SaveSetting(configFile, "ErrorLog", txtErrorLog.Text);
             SaveSetting(configFile, "LogLevel", txtLogLevel.Text);
-            MessageBox.Show("done");
         }
     }
 }
