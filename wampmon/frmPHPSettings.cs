@@ -40,7 +40,7 @@ namespace wampmon
 
         private void frmLogs_Load(object sender, EventArgs e)
         {
-
+            comboBox2.SelectedIndex= 0;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

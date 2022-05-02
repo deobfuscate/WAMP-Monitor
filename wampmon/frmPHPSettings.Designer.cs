@@ -40,9 +40,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtLogLevel = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDocRoot = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -173,18 +173,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Short Open Tag:";
             // 
-            // txtDocRoot
-            // 
-            this.txtDocRoot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtDocRoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDocRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocRoot.ForeColor = System.Drawing.Color.White;
-            this.txtDocRoot.Location = new System.Drawing.Point(106, 11);
-            this.txtDocRoot.Name = "txtDocRoot";
-            this.txtDocRoot.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDocRoot.Size = new System.Drawing.Size(207, 22);
-            this.txtDocRoot.TabIndex = 1;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -206,16 +194,31 @@
             this.comboBox1.Size = new System.Drawing.Size(209, 21);
             this.comboBox1.TabIndex = 5;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "On",
+            "Off"});
+            this.comboBox2.Location = new System.Drawing.Point(107, 12);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(209, 21);
+            this.comboBox2.TabIndex = 5;
+            // 
             // frmPHPSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(324, 232);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtDocRoot);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtLogLevel);
             this.Controls.Add(this.label3);
@@ -250,8 +253,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtLogLevel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDocRoot;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
