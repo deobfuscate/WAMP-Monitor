@@ -284,9 +284,6 @@ namespace wampmon
         private void SaveSettings()
         {
             var settingsJson = new JavaScriptSerializer().Serialize(settings);
-            #if DEBUG
-                Console.WriteLine(settingsJson);
-            #endif
             File.WriteAllText(settingsPath, settingsJson);
         }
     }
