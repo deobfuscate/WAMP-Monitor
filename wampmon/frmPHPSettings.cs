@@ -10,20 +10,8 @@ namespace wampmon
         private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [DllImport("user32.dll")]
         private static extern bool ReleaseCapture();
-        [DllImport("dwmapi.dll")]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
 
         private string configFile;
-
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            try
-            {
-                if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
-                    DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
-            }
-            catch { return; }
-        }
         
         public frmPHPSettings(string configFile)
         {
