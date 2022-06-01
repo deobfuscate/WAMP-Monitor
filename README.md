@@ -10,4 +10,3 @@ A tool to monitor a Windows Apache MySQL PHP stack including status monitors and
 * Apache/MySQL/PHP version information
 * View and purge Apache access/error logs 
 * Custom GUI
-* Windows Dark Theme integration 
