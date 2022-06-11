@@ -10,10 +10,6 @@ namespace wampmon
 {
     public partial class frmMain : Form
     {
-        [DllImport("user32.dll")]
-        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-        [DllImport("user32.dll")]
-        private static extern bool ReleaseCapture();
         private Settings settings;
         private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.cfg";
 
