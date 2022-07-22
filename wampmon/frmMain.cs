@@ -81,6 +81,7 @@ namespace wampmon
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
+            Console.WriteLine(output);
             return output;
         }
 
@@ -118,27 +119,29 @@ namespace wampmon
             CheckServices();
         }
 
-        private void KillService(string target)
-        {
-            foreach (var process in Process.GetProcessesByName(target))
+        private void KillService(string target) {
+            foreach (var process in Process.GetProcessesByName(target)) {
                 process.Kill();
+            }
             CheckServices();
         }
 
-        private void btnApache_Click(object sender, EventArgs e)
-        {
-            if (IsRunning("httpd"))
+        private void btnApache_Click(object sender, EventArgs e) {
+            if (IsRunning("httpd")) {
                 KillService("httpd");
-            else
+            }
+            else {
                 StartService("httpd.exe");
+            }
         }
 
-        private void btnMySQL_Click(object sender, EventArgs e)
-        {
-            if (IsRunning("mysqld"))
+        private void btnMySQL_Click(object sender, EventArgs e) {
+            if (IsRunning("mysqld")) {
                 KillService("mysqld");
-            else
+            }
+            else {
                 StartService("mysqld.exe");
+            }
         }
 
         private bool IsRunning(string target)
