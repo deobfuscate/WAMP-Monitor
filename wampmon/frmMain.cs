@@ -10,7 +10,7 @@ namespace wampmon
     public partial class frmMain : Form
     {
         private Settings settings;
-        private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.cfg";
+        private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.json";
 
         public frmMain()
         {
