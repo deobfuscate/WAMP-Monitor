@@ -8,19 +8,16 @@ namespace wampmon
     {
         private string configFile;
 
-        public frmApacheSettings(string configFile)
-        {
+        public frmApacheSettings(string configFile) {
             InitializeComponent();
             DoubleBuffered = true;
             this.configFile = configFile;
         }
 
-        private string ReadSetting(string filename, string setting)
-        {
+        private string ReadSetting(string filename, string setting) {
             string line;
             StreamReader file = new StreamReader(filename);
-            while ((line = file.ReadLine()) != null)
-            {
+            while ((line = file.ReadLine()) != null) {
                 if (line == "" || line[0] == '#') continue;
                 var split = line.Split(' ');
                 if (split[0] == setting)
@@ -29,13 +26,10 @@ namespace wampmon
             return null;
         }
 
-        private bool SaveSetting(string filename, string setting, string value)
-        {
+        private bool SaveSetting(string filename, string setting, string value) {
             string text = "";
-            using (StreamReader sr = new StreamReader(filename))
-            {
-                do
-                {
+            using (StreamReader sr = new StreamReader(filename)) {
+                do {
                     string line = sr.ReadLine();
                     var split = line.Split(' ');
                     if (line != "" && line[0] != '#' && split[0] == setting)
@@ -46,19 +40,16 @@ namespace wampmon
             text = text.TrimEnd('\r', '\n');
             if (text == "")
                 return false;
-            try
-            {
+            try {
                 File.WriteAllText(filename, text);
             }
-            catch
-            {
+            catch {
                 return false;
             }
             return true;
         }
 
-        private void frmLogs_Load(object sender, EventArgs e)
-        {
+        private void frmLogs_Load(object sender, EventArgs e) {
             txtDocRoot.Text = ReadSetting(configFile, "DocumentRoot");
             txtServerName.Text = ReadSetting(configFile, "ServerName");
             txtServerAdmin.Text = ReadSetting(configFile, "ServerAdmin");
@@ -67,13 +58,11 @@ namespace wampmon
             txtLogLevel.Text = ReadSetting(configFile, "LogLevel");
         }
 
-        private void btnCloseWindow_Click(object sender, EventArgs e)
-        {
+        private void btnCloseWindow_Click(object sender, EventArgs e) {
             Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+        private void btnSave_Click(object sender, EventArgs e) {
             SaveSetting(configFile, "DocumentRoot", txtDocRoot.Text);
             SaveSetting(configFile, "ServerName", txtServerName.Text);
             SaveSetting(configFile, "ServerAdmin", txtServerAdmin.Text);
