@@ -233,8 +233,7 @@ namespace wampmon
         }
 
         private void btnPHPSettings_Click(object sender, EventArgs e) {
-            var phpSettings = new frmPHPSettings(settings.phpPath + "\\php.ini");
-            phpSettings.Show();
+            new frmPHPSettings(settings.phpPath + "\\php.ini").Show();
         }
 
         private void SaveSettings() {
