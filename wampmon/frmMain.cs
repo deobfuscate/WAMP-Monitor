@@ -248,4 +248,17 @@ namespace wampmon
         public string phpPath { get; set; }
         public string mysqlPath { get; set; }
     }
+
+    static class Program
+    {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main() {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new frmMain());
+        }
+    }
 }

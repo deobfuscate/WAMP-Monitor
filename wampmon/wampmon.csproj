@@ -75,7 +75,6 @@
     <Compile Include="frmLogs.Designer.cs">
       <DependentUpon>frmLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPHPSettings.resx">
       <DependentUpon>frmPHPSettings.cs</DependentUpon>
