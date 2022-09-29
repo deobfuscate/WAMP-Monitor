@@ -5,10 +5,8 @@ using System.IO;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 
-namespace wampmon
-{
-    public partial class frmMain : Form
-    {
+namespace wampmon {
+    public partial class frmMain : Form {
         private Settings settings;
         private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.json";
 
@@ -242,15 +240,13 @@ namespace wampmon
         }
     }
 
-    public class Settings
-    {
+    public class Settings {
         public string apachePath { get; set; }
         public string phpPath { get; set; }
         public string mysqlPath { get; set; }
     }
 
-    static class Program
-    {
+    static class Program {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
