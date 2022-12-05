@@ -32,12 +32,12 @@
             this.txtLogs = new System.Windows.Forms.TextBox();
             this.btnClearLogs = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlFooter = new System.Windows.Forms.Panel();
+            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.pnlMain.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
+            this.pnlContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtLogs
@@ -87,36 +87,36 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnCloseWindow_Click);
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnClearLogs);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 289);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
-            this.panel1.Size = new System.Drawing.Size(562, 59);
-            this.panel1.TabIndex = 5;
+            this.pnlMain.Controls.Add(this.pnlFooter);
+            this.pnlMain.Controls.Add(this.btnClearLogs);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlMain.Location = new System.Drawing.Point(0, 289);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Padding = new System.Windows.Forms.Padding(10);
+            this.pnlMain.Size = new System.Drawing.Size(562, 59);
+            this.pnlMain.TabIndex = 5;
             // 
-            // panel3
+            // pnlFooter
             // 
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(104, 10);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(453, 39);
-            this.panel3.TabIndex = 5;
+            this.pnlFooter.Controls.Add(this.btnClose);
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlFooter.Location = new System.Drawing.Point(104, 10);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pnlFooter.Size = new System.Drawing.Size(453, 39);
+            this.pnlFooter.TabIndex = 5;
             // 
-            // panel2
+            // pnlContainer
             // 
-            this.panel2.Controls.Add(this.txtLogs);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.panel2.Size = new System.Drawing.Size(562, 289);
-            this.panel2.TabIndex = 6;
+            this.pnlContainer.Controls.Add(this.txtLogs);
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(0, 0);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.pnlContainer.Size = new System.Drawing.Size(562, 289);
+            this.pnlContainer.TabIndex = 6;
             // 
             // frmLogs
             // 
@@ -124,17 +124,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(562, 348);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlContainer);
+            this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(300, 250);
             this.Name = "frmLogs";
             this.Text = "Apache Access Logs - WAMP Monitor";
             this.Load += new System.EventHandler(this.frmLogs_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -143,8 +143,8 @@
         private System.Windows.Forms.TextBox txtLogs;
         private System.Windows.Forms.Button btnClearLogs;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.Panel pnlFooter;
     }
 }

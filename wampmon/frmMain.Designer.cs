@@ -54,7 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnFolder = new System.Windows.Forms.Button();
             this.btnWebView = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pnlApache.SuspendLayout();
             this.pnlMySQL.SuspendLayout();
             this.pnlApacheConfig.SuspendLayout();
@@ -350,11 +350,11 @@
             this.btnWebView.UseVisualStyleBackColor = false;
             this.btnWebView.Click += new System.EventHandler(this.btnWebView_Click);
             // 
-            // imageList1
+            // imageList
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "929872.png");
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "929872.png");
             // 
             // frmMain
             // 
@@ -412,7 +412,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnFolder;
         private System.Windows.Forms.Button btnWebView;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList;
     }
 }
 
