@@ -9,6 +9,8 @@ namespace wampmon {
     public partial class frmMain : Form {
         private Settings settings;
         private string settingsPath = AppDomain.CurrentDomain.BaseDirectory + "settings.json";
+        private const string APACHE_BINARY = "httpd.exe";
+        private const string MYSQL_BINARY = "mysqld.exe";
 
         public frmMain() {
             InitializeComponent();
@@ -95,7 +97,7 @@ namespace wampmon {
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.CreateNoWindow = true;
-            if (svc == "httpd.exe") { // apache
+            if (svc == APACHE_BINARY) { // apache
                 p.StartInfo.WorkingDirectory = $"{settings.apachePath}\\bin";
                 p.StartInfo.FileName = apacheExe;
             }
@@ -115,20 +117,20 @@ namespace wampmon {
         }
 
         private void btnApache_Click(object sender, EventArgs e) {
-            if (IsRunning("httpd")) {
-                KillService("httpd");
+            if (IsRunning(Path.GetFileNameWithoutExtension(APACHE_BINARY))) {
+                KillService(Path.GetFileNameWithoutExtension(APACHE_BINARY));
             }
             else {
-                StartService("httpd.exe");
+                StartService(APACHE_BINARY);
             }
         }
 
         private void btnMySQL_Click(object sender, EventArgs e) {
-            if (IsRunning("mysqld")) {
-                KillService("mysqld");
+            if (IsRunning(Path.GetFileNameWithoutExtension(MYSQL_BINARY))) {
+                KillService(Path.GetFileNameWithoutExtension(MYSQL_BINARY));
             }
             else {
-                StartService("mysqld.exe");
+                StartService(MYSQL_BINARY);
             }
         }
 
@@ -151,7 +153,7 @@ namespace wampmon {
                 svcLabel.Text = "Offline";
                 svcButton.Text = "Start";
             }
-            if (IsRunning("httpd")) {
+            if (IsRunning(Path.GetFileNameWithoutExtension(APACHE_BINARY))) {
                 btnLogs.Enabled = false;
                 btnApacheSettings.Enabled = false;
             }
@@ -162,8 +164,8 @@ namespace wampmon {
         }
 
         private void CheckServices() {
-            CheckService("httpd", lblApacheStatus, btnApache);
-            CheckService("mysqld", lblMySQLStatus, btnMySQL);
+            CheckService(Path.GetFileNameWithoutExtension(APACHE_BINARY), lblApacheStatus, btnApache);
+            CheckService(Path.GetFileNameWithoutExtension(MYSQL_BINARY), lblMySQLStatus, btnMySQL);
         }
 
         private void ApacheConfigClick(object sender, EventArgs e) {
