@@ -32,16 +32,16 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtPort = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPort = new System.Windows.Forms.Label();
+            this.lblServerName = new System.Windows.Forms.Label();
             this.txtServerName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblServerAddr = new System.Windows.Forms.Label();
             this.txtServerAdmin = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLogLvl = new System.Windows.Forms.Label();
             this.txtLogLevel = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDocRoot = new System.Windows.Forms.Label();
             this.txtDocRoot = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblErrorLog = new System.Windows.Forms.Label();
             this.txtErrorLog = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -87,25 +87,25 @@
             this.txtPort.Size = new System.Drawing.Size(61, 22);
             this.txtPort.TabIndex = 4;
             // 
-            // label1
+            // lblPort
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(68, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Port:";
+            this.lblPort.AutoSize = true;
+            this.lblPort.ForeColor = System.Drawing.Color.White;
+            this.lblPort.Location = new System.Drawing.Point(68, 99);
+            this.lblPort.Name = "lblPort";
+            this.lblPort.Size = new System.Drawing.Size(29, 13);
+            this.lblPort.TabIndex = 5;
+            this.lblPort.Text = "Port:";
             // 
-            // label2
+            // lblServerName
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(25, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Server Name:";
+            this.lblServerName.AutoSize = true;
+            this.lblServerName.ForeColor = System.Drawing.Color.White;
+            this.lblServerName.Location = new System.Drawing.Point(25, 43);
+            this.lblServerName.Name = "lblServerName";
+            this.lblServerName.Size = new System.Drawing.Size(72, 13);
+            this.lblServerName.TabIndex = 7;
+            this.lblServerName.Text = "Server Name:";
             // 
             // txtServerName
             // 
@@ -119,15 +119,15 @@
             this.txtServerName.Size = new System.Drawing.Size(207, 22);
             this.txtServerName.TabIndex = 2;
             // 
-            // label3
+            // lblServerAddr
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Server Admin:";
+            this.lblServerAddr.AutoSize = true;
+            this.lblServerAddr.ForeColor = System.Drawing.Color.White;
+            this.lblServerAddr.Location = new System.Drawing.Point(24, 71);
+            this.lblServerAddr.Name = "lblServerAddr";
+            this.lblServerAddr.Size = new System.Drawing.Size(73, 13);
+            this.lblServerAddr.TabIndex = 9;
+            this.lblServerAddr.Text = "Server Admin:";
             // 
             // txtServerAdmin
             // 
@@ -141,15 +141,15 @@
             this.txtServerAdmin.Size = new System.Drawing.Size(207, 22);
             this.txtServerAdmin.TabIndex = 3;
             // 
-            // label4
+            // lblLogLvl
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(40, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Log Level:";
+            this.lblLogLvl.AutoSize = true;
+            this.lblLogLvl.ForeColor = System.Drawing.Color.White;
+            this.lblLogLvl.Location = new System.Drawing.Point(40, 153);
+            this.lblLogLvl.Name = "lblLogLvl";
+            this.lblLogLvl.Size = new System.Drawing.Size(57, 13);
+            this.lblLogLvl.TabIndex = 11;
+            this.lblLogLvl.Text = "Log Level:";
             // 
             // txtLogLevel
             // 
@@ -163,15 +163,15 @@
             this.txtLogLevel.Size = new System.Drawing.Size(207, 22);
             this.txtLogLevel.TabIndex = 6;
             // 
-            // label5
+            // lblDocRoot
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Document Root:";
+            this.lblDocRoot.AutoSize = true;
+            this.lblDocRoot.ForeColor = System.Drawing.Color.White;
+            this.lblDocRoot.Location = new System.Drawing.Point(12, 15);
+            this.lblDocRoot.Name = "lblDocRoot";
+            this.lblDocRoot.Size = new System.Drawing.Size(85, 13);
+            this.lblDocRoot.TabIndex = 13;
+            this.lblDocRoot.Text = "Document Root:";
             // 
             // txtDocRoot
             // 
@@ -185,15 +185,15 @@
             this.txtDocRoot.Size = new System.Drawing.Size(207, 22);
             this.txtDocRoot.TabIndex = 1;
             // 
-            // label6
+            // lblErrorLog
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(44, 126);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Error Log:";
+            this.lblErrorLog.AutoSize = true;
+            this.lblErrorLog.ForeColor = System.Drawing.Color.White;
+            this.lblErrorLog.Location = new System.Drawing.Point(44, 126);
+            this.lblErrorLog.Name = "lblErrorLog";
+            this.lblErrorLog.Size = new System.Drawing.Size(53, 13);
+            this.lblErrorLog.TabIndex = 15;
+            this.lblErrorLog.Text = "Error Log:";
             // 
             // txtErrorLog
             // 
@@ -213,17 +213,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(324, 234);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblErrorLog);
             this.Controls.Add(this.txtErrorLog);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblDocRoot);
             this.Controls.Add(this.txtDocRoot);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblLogLvl);
             this.Controls.Add(this.txtLogLevel);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblServerAddr);
             this.Controls.Add(this.txtServerAdmin);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblServerName);
             this.Controls.Add(this.txtServerName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPort);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtPort);
@@ -243,16 +243,16 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtPort;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPort;
+        private System.Windows.Forms.Label lblServerName;
         private System.Windows.Forms.TextBox txtServerName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblServerAddr;
         private System.Windows.Forms.TextBox txtServerAdmin;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLogLvl;
         private System.Windows.Forms.TextBox txtLogLevel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDocRoot;
         private System.Windows.Forms.TextBox txtDocRoot;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblErrorLog;
         private System.Windows.Forms.TextBox txtErrorLog;
     }
 }
