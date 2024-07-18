@@ -26,13 +26,11 @@ namespace wampmon {
             }
 
             if (!string.IsNullOrEmpty(settings.apachePath)) {
-                output = GetApacheVer();
-                lblApacheVer.Text = "v" + output.Split(' ')[2].Split('/')[1];
+                lblApacheVer.Text = GetApacheVer();
                 pnlApacheConfig.Hide();
             }
             if (!string.IsNullOrEmpty(settings.mysqlPath)) {
-                output = GetMySQLVer();
-                lblMySQLVer.Text = "v" + output.Split(' ')[3];
+                lblMySQLVer.Text = GetMySQLVer();
                 pnlMySQLConfig.Hide();
             }
             if (File.Exists($"{settings.phpPath}\\php.exe")) {
@@ -42,6 +40,7 @@ namespace wampmon {
         }
 
         private string GetApacheVer() {
+            if (!File.Exists($"{settings.apachePath}\\bin\\httpd.exe")) return null;
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
@@ -52,10 +51,11 @@ namespace wampmon {
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
-            return output;
+            return "v" + output.Split(' ')[2].Split('/')[1];
         }
 
         private string GetMySQLVer() {
+            if (!File.Exists($"{settings.mysqlPath}\\bin\\mysql.exe")) return null;
             Process p = new Process();
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
@@ -65,7 +65,7 @@ namespace wampmon {
             p.Start();
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
-            return output;
+            return "v" + output.Split(' ')[3];
         }
 
         private string GetPHPVer() {
